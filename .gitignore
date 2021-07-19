@@ -6,6 +6,6 @@
 proxy
 snowflake
 blizzard
-plugin
-snowflake-zip
-snowflake-zip-win
+plugin/
+snowflake-zip/
+snowflake-zip-win/
