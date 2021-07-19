@@ -2,3 +2,7 @@
 *.crl
 *.pem
 *.key
+proxy*
+snowflake*
+blizzard*
+plugin
