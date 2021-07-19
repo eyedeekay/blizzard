@@ -28,3 +28,16 @@ situation where operating a Snowflake would be unsafe. **So *If* you're able**
 **safely donate a Snowflake long-term.**
 
 So **TL:DR** just to be prosocial.
+
+Get it:
+-------
+
+### Outside I2P
+
+ - [Windows](https://github.com/eyedeekay/blizzard/releases)
+ - [Linux](https://github.com/eyedeekay/blizzard/releases)
+
+### Inside I2P
+ 
+ - [Windows (In-I2P)](https://idk.i2p/blizzard/snowflake-win.su3)
+ - [Linux (In-I2P)](https://idk.i2p/blizzard/snowflake.su3)
