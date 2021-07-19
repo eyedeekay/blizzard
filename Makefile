@@ -1,5 +1,5 @@
 
-plugins: clean snowflake-plugin-win snowflake-plugin
+plugins: clean index snowflake-plugin-win snowflake-plugin
 
 clean:
 	rm -frv proxy proxy.exe snowflake snowflake.exe blizzard blizzard.exe plugin snowflake-zip snowflake-zip-win *.su3 *.zip
@@ -43,3 +43,15 @@ snowflake-plugin: snowflake-lin
 		-license=MIT
 	cp -v *.su3 ../snowflake-linux.su3
 	unzip -o snowflake.zip -d snowflake-zip
+
+index:
+	@echo "<!DOCTYPE html>" > index.html
+	@echo "<html>" >> index.html
+	@echo "<head>" >> index.html
+	@echo "  <title>Blizzard, I2P Plugin for Donating a Snowflake</title>" >> index.html
+	@echo "  <link rel=\"stylesheet\" type=\"text/css\" href =\"home.css\" />" >> index.html
+	@echo "</head>" >> index.html
+	@echo "<body>" >> index.html
+	markdown README.md | tee -a index.html
+	@echo "</body>" >> index.html
+	@echo "</html>" >> index.html
