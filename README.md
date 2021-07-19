@@ -39,5 +39,5 @@ Get it:
 
 ### Inside I2P
  
- - [Windows (In-I2P)](https://idk.i2p/blizzard/snowflake-win.su3)
- - [Linux (In-I2P)](https://idk.i2p/blizzard/snowflake.su3)
+ - [Windows (In-I2P)](https://idk.i2p/blizzard/snowflake-windows.su3)
+ - [Linux (In-I2P)](https://idk.i2p/blizzard/snowflake-linux.su3)
