@@ -27,7 +27,7 @@ snowflake-plugin-win: snowflake-win
 	unzip -o snowflake.zip -d snowflake-zip-win
 
 snowflake-lin:
-	GOOS=windows go build -o snowflake
+	GOOS=linux go build -o snowflake
 
 snowflake-plugin: snowflake-lin
 	i2p.plugin.native -name=snowflake \
