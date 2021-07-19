@@ -22,7 +22,8 @@ snowflake-plugin-win: snowflake-win
 		-command="\$$PLUGIN/lib/snowflake.exe -log \$$PLUGIN/lib/snowflake.log" \
 		-license=MIT \
 		-targetos="windows"
-	cp -v *.su3 ../snowflake-windows.su3
+	cp -v snowflake.su3 ../snowflake-windows.su3
+	cp -v ../snowflake-windows.su3 .
 	unzip -o snowflake.zip -d snowflake-zip-win
 
 snowflake-lin:
@@ -41,7 +42,8 @@ snowflake-plugin: snowflake-lin
 		-exename=snowflake \
 		-command="\$$PLUGIN/lib/snowflake -log \$$PLUGIN/lib/snowflake.log" \
 		-license=MIT
-	cp -v *.su3 ../snowflake-linux.su3
+	cp -v snowflake.su3 ../snowflake-linux.su3
+	cp -v ../snowflake-linux.su3 .
 	unzip -o snowflake.zip -d snowflake-zip
 
 index:
@@ -55,3 +57,13 @@ index:
 	markdown README.md | tee -a index.html
 	@echo "</body>" >> index.html
 	@echo "</html>" >> index.html
+
+export sumsflinux=`sha256sum "../snowflake-linux.su3"`
+export sumsfwindows=`sha256sum "../snowflake-windows.su3"`
+
+REPO_NAME=blizzard
+VERSION=0.0.001
+
+upload-plugins:
+	gothub upload -R -u eyedeekay -r "$(REPO_NAME)" -t v$(VERSION) -l "$(sumsflinux)" -n "snowflake-linux.su3" -f "../snowflake-linux.su3"
+	gothub upload -R -u eyedeekay -r "$(REPO_NAME)" -t v$(VERSION) -l "$(sumsfwindows)" -n "snowflake-windows.su3" -f "../snowflake-windows.su3"
