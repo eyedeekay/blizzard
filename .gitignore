@@ -2,7 +2,10 @@
 *.crl
 *.pem
 *.key
-proxy*
-snowflake*
-blizzard*
+*.exe
+proxy
+snowflake
+blizzard
 plugin
+snowflake-zip
+snowflake-zip-win
