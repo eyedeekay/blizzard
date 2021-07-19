@@ -4,6 +4,7 @@ import (
 	"flag"
 	"i2pgit.org/idk/blizzard/lib"
 	"log"
+	"os"
 
 	"github.com/getlantern/systray"
 	"github.com/getlantern/systray/example/icon"
@@ -33,8 +34,14 @@ func onReady() {
 
 	// Sets the icon of a menu item. Only available on Mac and Windows.
 	mQuit.SetIcon(icon.Data)
+	for {
+		select {
+		case <-mQuit.ClickedCh:
+			os.Exit(0)
+		}
+	}
 }
 
 func onExit() {
-	log.Fatal("Stopping the Snowflake")
+	log.Println("Stopping the Snowflake")
 }
