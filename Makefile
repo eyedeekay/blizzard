@@ -2,7 +2,7 @@
 plugins: clean snowflake-plugin-win snowflake-plugin
 
 clean:
-	rm -frv proxy proxy.exe snowflake snowflake.exe blizzard blizzard.exe plugin snowflake-zip snowflake-zip-win
+	rm -frv proxy proxy.exe snowflake snowflake.exe blizzard blizzard.exe plugin snowflake-zip snowflake-zip-win *.su3 *.zip
 	find . -name '*.go' -exec gofmt -w -s {} \;
 
 snowflake-win:
