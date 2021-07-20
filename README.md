@@ -40,4 +40,4 @@ Get it:
 ### Inside I2P
  
  - [Windows (In-I2P)](https://idk.i2p/blizzard/snowflake-windows.su3)
- - [Linux (In-I2P)](https://idk.i2p/blizzard/snowflake-linux.su3)
+ - [Linux (In-I2P)](https://idk.i2p/blizzard/snowflake-linux.su3)<div>Icons made by <a href="" title="itim2101">itim2101</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>

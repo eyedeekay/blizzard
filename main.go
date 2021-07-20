@@ -2,12 +2,13 @@ package main
 
 import (
 	"flag"
-	"i2pgit.org/idk/blizzard/lib"
+
 	"log"
 	"os"
 
 	"github.com/getlantern/systray"
-	"github.com/getlantern/systray/example/icon"
+	"i2pgit.org/idk/blizzard/icon"
+	"i2pgit.org/idk/blizzard/lib"
 )
 
 func main() {
