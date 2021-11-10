@@ -1,4 +1,7 @@
 
+REPO_NAME=blizzard
+VERSION=0.0.032
+
 plugins: clean index snowflake-plugin-win snowflake-plugin
 
 clean:
@@ -11,11 +14,12 @@ snowflake-win:
 snowflake-plugin-win: snowflake-win
 	i2p.plugin.native -name=snowflake \
 		-signer=hankhill19580@gmail.com \
-		-version 0.0.031 \
+		-version "$(VERSION)" \
 		-author=hankhill19580@gmail.com \
 		-autostart=true \
 		-clientname=snowflake.exe \
 		-consolename="Snowflake Donor" \
+		-consoleicon="icon/icon.png" \
 		-delaystart="1" \
 		-desc="`cat snowdesc)`" \
 		-exename=snowflake.exe \
@@ -32,11 +36,12 @@ snowflake-lin:
 snowflake-plugin: snowflake-lin
 	i2p.plugin.native -name=snowflake \
 		-signer=hankhill19580@gmail.com \
-		-version 0.0.031 \
+		-version "$(VERSION)" \
 		-author=hankhill19580@gmail.com \
 		-autostart=true \
 		-clientname=snowflake \
 		-consolename="Snowflake Donor" \
+		-consoleicon="icon/icon.png" \
 		-delaystart="1" \
 		-desc="`cat snowdesc)`" \
 		-exename=snowflake \
@@ -61,9 +66,6 @@ index:
 
 export sumsflinux=`sha256sum "../snowflake-linux.su3"`
 export sumsfwindows=`sha256sum "../snowflake-windows.su3"`
-
-REPO_NAME=blizzard
-VERSION=0.0.001
 
 upload-plugins:
 	gothub upload -R -u eyedeekay -r "$(REPO_NAME)" -t v$(VERSION) -l "$(sumsflinux)" -n "snowflake-linux.su3" -f "../snowflake-linux.su3"

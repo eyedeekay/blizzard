@@ -3,7 +3,7 @@ module i2pgit.org/idk/blizzard
 go 1.15
 
 require (
-	git.torproject.org/pluggable-transports/snowflake.git v0.0.0-20210426181850-af6e2c30e1a6
+	git.torproject.org/pluggable-transports/snowflake.git v1.1.1-0.20211028140501-0a2598a1e854
 	github.com/getlantern/systray v1.1.0
 	github.com/gorilla/websocket v1.4.2
 	github.com/pion/ice/v2 v2.1.8

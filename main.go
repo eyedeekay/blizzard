@@ -2,47 +2,53 @@ package main
 
 import (
 	"flag"
-
+	"io"
 	"log"
 	"os"
 
-	"github.com/getlantern/systray"
-	"i2pgit.org/idk/blizzard/icon"
-	"i2pgit.org/idk/blizzard/lib"
+	"git.torproject.org/pluggable-transports/snowflake.git/common/safelog"
+	sf "git.torproject.org/pluggable-transports/snowflake.git/proxy/lib"
 )
 
 func main() {
-
-	flags := make(map[string]*string)
-	flags["capacity"] = flag.String("capacity", "10", "maximum concurrent clients")
-	flags["stunURL"] = flag.String("stun", snowflake.DefaultSTUNURL, "broker URL")
-	flags["logFilename"] = flag.String("log", "", "log filename")
-	flags["rawBrokerURL"] = flag.String("broker", snowflake.DefaultBrokerURL, "broker URL")
-	flags["unsafeLogging"] = flag.String("unsafe-logging", "false", "prevent logs from being scrubbed")
-	flags["keepLocalAddresses"] = flag.String("keep-local-addresses", "false", "keep local LAN address ICE candidates")
-	flags["relayURL"] = flag.String("relay", snowflake.DefaultRelayURL, "websocket relay URL")
+	capacity := flag.Uint("capacity", 0, "maximum concurrent clients")
+	stunURL := flag.String("stun", sf.DefaultSTUNURL, "broker URL")
+	logFilename := flag.String("log", "", "log filename")
+	rawBrokerURL := flag.String("broker", sf.DefaultBrokerURL, "broker URL")
+	unsafeLogging := flag.Bool("unsafe-logging", false, "prevent logs from being scrubbed")
+	keepLocalAddresses := flag.Bool("keep-local-addresses", false, "keep local LAN address ICE candidates")
+	relayURL := flag.String("relay", sf.DefaultRelayURL, "websocket relay URL")
 
 	flag.Parse()
-	go snowflake.Main(flags)
-	systray.Run(onReady, onExit)
-}
 
-func onReady() {
-	systray.SetIcon(icon.Data)
-	systray.SetTitle("Snowflake Donor")
-	systray.SetTooltip("You are available to donate a Snowflake proxy")
-	mQuit := systray.AddMenuItem("Stop Snowflake", "Close the application and stop your snowflake.")
-
-	// Sets the icon of a menu item. Only available on Mac and Windows.
-	mQuit.SetIcon(icon.Data)
-	for {
-		select {
-		case <-mQuit.ClickedCh:
-			os.Exit(0)
-		}
+	proxy := sf.SnowflakeProxy{
+		Capacity:           uint(*capacity),
+		STUNURL:            *stunURL,
+		BrokerURL:          *rawBrokerURL,
+		KeepLocalAddresses: *keepLocalAddresses,
+		RelayURL:           *relayURL,
 	}
-}
 
-func onExit() {
-	log.Println("Stopping the Snowflake")
+	var logOutput io.Writer = os.Stderr
+	log.SetFlags(log.LstdFlags | log.LUTC)
+
+	log.SetFlags(log.LstdFlags | log.LUTC)
+	if *logFilename != "" {
+		f, err := os.OpenFile(*logFilename, os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0600)
+		if err != nil {
+			log.Fatal(err)
+		}
+		defer f.Close()
+		logOutput = io.MultiWriter(os.Stderr, f)
+	}
+	if *unsafeLogging {
+		log.SetOutput(logOutput)
+	} else {
+		log.SetOutput(&safelog.LogScrubber{Output: logOutput})
+	}
+
+	err := proxy.Start()
+	if err != nil {
+		log.Fatal(err)
+	}
 }

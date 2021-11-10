@@ -5,6 +5,8 @@ git.torproject.org/pluggable-transports/snowflake.git v0.0.0-20210426181850-af6e
 git.torproject.org/pluggable-transports/snowflake.git v0.0.0-20210426181850-af6e2c30e1a6/go.mod h1:9fxoqFMoIloNxAMn+1cEN3cCMhUQy60G8K79+LIaYwc=
 git.torproject.org/pluggable-transports/snowflake.git v1.1.0 h1:rl/LloEeBG1sqdZdVxdW1Gmb/c3ZjdvT5o3RV8iaDg4=
 git.torproject.org/pluggable-transports/snowflake.git v1.1.0/go.mod h1:+a2yI6dfEjwEnqPgXTtKobeHDEdgJa3ANZN4bjSQk+M=
+git.torproject.org/pluggable-transports/snowflake.git v1.1.1-0.20211028140501-0a2598a1e854 h1:CdQWuPS0hMLaOGh2hK5+/D/ixCaINHczeAsI39LuK/c=
+git.torproject.org/pluggable-transports/snowflake.git v1.1.1-0.20211028140501-0a2598a1e854/go.mod h1:Sj+XOo5RhyZuw41Z12gLsBdx7RKKfHTQ+5ZcJhlYdJo=
 github.com/BurntSushi/toml v0.3.1/go.mod h1:xHWCNGjB5oqiDr8zfno3MHue2Ht5sIBksp03qcyfWMU=
 github.com/Knetic/govaluate v3.0.1-0.20171022003610-9aa49832a739+incompatible/go.mod h1:r7JcOSlj0wfOMncg0iLm8Leh48TZaKVeNIfJntJ2wa0=
 github.com/Shopify/sarama v1.19.0/go.mod h1:FVkBWblsNy7DGZRfXLU0O9RCGt5g3g3yEuWXgklEdEo=
@@ -369,6 +371,7 @@ github.com/xtaci/smux v1.5.15/go.mod h1:OMlQbT5vcgl2gb49mFkYo6SMf+zP3rcjcwQz7ZU7
 github.com/yuin/goldmark v1.1.27/go.mod h1:3hX8gzYuyVAZsxl0MRgGTJEmQBFcNTphYh9decYSb74=
 github.com/yuin/goldmark v1.1.32/go.mod h1:3hX8gzYuyVAZsxl0MRgGTJEmQBFcNTphYh9decYSb74=
 github.com/yuin/goldmark v1.2.1/go.mod h1:3hX8gzYuyVAZsxl0MRgGTJEmQBFcNTphYh9decYSb74=
+gitlab.torproject.org/tpo/anti-censorship/geoip v0.0.0-20210928150955-7ce4b3d98d01/go.mod h1:K3LOI4H8fa6j+7E10ViHeGEQV10304FG4j94ypmKLjY=
 go.etcd.io/bbolt v1.3.3/go.mod h1:IbVyRI1SCnLcuJnV2u8VeU0CEYM7e686BmAb1XKL+uU=
 go.etcd.io/etcd v0.0.0-20191023171146-3cf2f69b5738/go.mod h1:dnLIgRNXwCJa5e+c6mIZCrds/GIG4ncV9HhK5PX7jPg=
 go.opencensus.io v0.20.1/go.mod h1:6WKK9ahsWS3RSO+PY9ZHZUfv2irvY6gN279GOPZjmmk=
