@@ -23,7 +23,7 @@ snowflake-plugin-win: snowflake-win
 		-delaystart="1" \
 		-desc="`cat snowdesc)`" \
 		-exename=snowflake.exe \
-		-command="\$$PLUGIN/lib/snowflake.exe -log \$$PLUGIN/lib/snowflake.log" \
+		-command="snowflake.exe -log \$$PLUGIN/lib/snowflake.log" \
 		-license=MIT \
 		-targetos="windows"
 	cp -v snowflake.su3 ../snowflake-windows.su3
@@ -45,7 +45,7 @@ snowflake-plugin: snowflake-lin
 		-delaystart="1" \
 		-desc="`cat snowdesc)`" \
 		-exename=snowflake \
-		-command="\$$PLUGIN/lib/snowflake -log \$$PLUGIN/lib/snowflake.log" \
+		-command="snowflake -log \$$PLUGIN/lib/snowflake.log" \
 		-license=MIT
 	cp -v snowflake.su3 ../snowflake-linux.su3
 	cp -v ../snowflake-linux.su3 .
