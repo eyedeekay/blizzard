@@ -2,58 +2,36 @@
 REPO_NAME=blizzard
 VERSION=0.0.035
 
-plugins: clean index snowflake-plugin-win snowflake-plugin
+plugins: clean index
+	GOOS=windows GOARCH=amd64 make snowflake-plugin
+	GOOS=linux GOARCH=amd64 make snowflake-plugin
+	#GOOS=darwin GOARCH=amd64 make snowflake-plugin
 
 clean:
 	rm -frv proxy proxy.exe snowflake snowflake.exe blizzard blizzard.exe plugin snowflake-zip snowflake-zip-win *.su3 *.zip
 	find . -name '*.go' -exec gofmt -w -s {} \;
 
-snowflake-win:
-	GOOS=windows go build -o snowflake.exe
+snowflake:
+	go build -ldflags "-s -w" -o snowflake-$(GOOS)
 
-snowflake-plugin-win: snowflake-win res
-	i2p.plugin.native -name=snowflake \
+snowflake-plugin: snowflake res
+	i2p.plugin.native -name=snowflake-$(GOOS) \
 		-signer=hankhill19580@gmail.com \
 		-version "$(VERSION)" \
 		-author=hankhill19580@gmail.com \
 		-autostart=true \
-		-clientname=snowflake.exe \
+		-clientname=snowflake-$(GOOS) \
 		-consolename="Snowflake Donor" \
 		-consoleurl="http://127.0.0.1:7672" \
 		-icondata="icon/icon.png" \
 		-delaystart="1" \
 		-desc="`cat snowdesc)`" \
-		-exename=snowflake.exe \
-		-command="snowflake.exe -directory \$$PLUGIN/www -log \$$PLUGIN/lib/snowflake.log" \
-		-license=MIT \
-		-targetos="windows" \
-		-res=tmp/
-	cp -v snowflake.su3 ../snowflake-windows.su3
-	cp -v ../snowflake-windows.su3 .
-	unzip -o snowflake.zip -d snowflake-zip-win
-
-snowflake-lin:
-	GOOS=linux go build -o snowflake
-
-snowflake-plugin: snowflake-lin res
-	i2p.plugin.native -name=snowflake \
-		-signer=hankhill19580@gmail.com \
-		-version "$(VERSION)" \
-		-author=hankhill19580@gmail.com \
-		-autostart=true \
-		-clientname=snowflake \
-		-consolename="Snowflake Donor" \
-		-consoleurl="http://127.0.0.1:7672" \
-		-icondata="icon/icon.png" \
-		-delaystart="1" \
-		-desc="`cat snowdesc)`" \
-		-exename=snowflake \
+		-exename=snowflake-$(GOOS) \
 		-command="snowflake -directory \$$PLUGIN/www -log \$$PLUGIN/lib/snowflake.log" \
 		-license=MIT \
 		-res=tmp/
-	cp -v snowflake.su3 ../snowflake-linux.su3
-	cp -v ../snowflake-linux.su3 .
-	unzip -o snowflake.zip -d snowflake-zip
+	cp -v ../snowflake-$(GOOS).su3 .
+	unzip -o snowflake-$(GOOS).zip -d snowflake-zip
 
 res:
 	mkdir -pv tmp/www

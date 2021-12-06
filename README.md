@@ -1,7 +1,7 @@
 Snowflake Donor I2P Plugin, `"The Blizzard"`
 ============================================
 
-This is a library version of the freestanding Snowflake proxy, which I use to
+This is standalone version of the Tor Project's "Snowflake" proxy, which I use to
 produce an I2P Plugin which donates a Snowflake to Tor Browser Users. The
 Snowflake uses I2P to manage it's life-cycle, when you start and stop I2P, so
 goes the Snowflake.

@@ -10,5 +10,7 @@ plugin/
 snowflake-zip/
 snowflake-zip-win/
 *.su3
+*.zip
 managed-plugins-exit.png
 managed-plugins.png
+snowflake-*
