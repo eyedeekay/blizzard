@@ -1,5 +1,6 @@
 
 REPO_NAME=blizzard
+USER_GH=eyedeekay
 VERSION=0.0.035
 
 plugins: clean index
@@ -8,7 +9,7 @@ plugins: clean index
 	#GOOS=darwin GOARCH=amd64 make snowflake-plugin
 
 clean:
-	rm -frv proxy proxy.exe snowflake snowflake.exe blizzard blizzard.exe plugin snowflake-zip snowflake-zip-win *.su3 *.zip
+	rm -frv proxy proxy.exe snowflake snowflake.exe $(REPO_NAME) $(REPO_NAME).exe plugin snowflake-zip snowflake-zip-win *.su3 *.zip
 	find . -name '*.go' -exec gofmt -w -s {} \;
 
 snowflake:
@@ -43,7 +44,7 @@ index:
 	@echo "<!DOCTYPE html>" > index.html
 	@echo "<html>" >> index.html
 	@echo "<head>" >> index.html
-	@echo "  <title>Blizzard, I2P Plugin for Donating a Snowflake</title>" >> index.html
+	@echo "  <title>$(REPO_NAME), I2P Plugin for Donating a Snowflake</title>" >> index.html
 	@echo "  <link rel=\"stylesheet\" type=\"text/css\" href =\"home.css\" />" >> index.html
 	@echo "</head>" >> index.html
 	@echo "<body>" >> index.html
@@ -55,6 +56,20 @@ index:
 export sumsflinux=`sha256sum "../snowflake-linux.su3"`
 export sumsfwindows=`sha256sum "../snowflake-windows.su3"`
 
+release: version upload-plugins
+
+version:
+	cat README.md | gothub release -s $(GITHUB_TOKEN) -u $(USER_GH) -r $(REPO_NAME) -t v$(VERSION) -d -
+
+download-su3s:
+	GOOS=windows GOARCH=amd64 make download-single-su3
+	GOOS=linux GOARCH=amd64 make download-single-su3
+
+download-single-su3:
+	wget -N -c "https://github.com/$(USER_GH)/$(REPO_NAME)/releases/download/v$(VERSION)/$(REPO_NAME)-$(GOOS)-$(GOARCH).su3"
+
+upload-su3s: upload-plugins
+
 upload-plugins:
-	gothub upload -R -u eyedeekay -r "$(REPO_NAME)" -t v$(VERSION) -l "$(sumsflinux)" -n "snowflake-linux.su3" -f "../snowflake-linux.su3"
-	gothub upload -R -u eyedeekay -r "$(REPO_NAME)" -t v$(VERSION) -l "$(sumsfwindows)" -n "snowflake-windows.su3" -f "../snowflake-windows.su3"
+	gothub upload -R -u $(USER_GH) -r "$(REPO_NAME)" -t v$(VERSION) -l "$(sumsflinux)" -n "snowflake-linux.su3" -f "../snowflake-linux.su3"
+	gothub upload -R -u $(USER_GH) -r "$(REPO_NAME)" -t v$(VERSION) -l "$(sumsfwindows)" -n "snowflake-windows.su3" -f "../snowflake-windows.su3"
