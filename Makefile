@@ -31,7 +31,7 @@ snowflake-plugin: snowflake res
 		-license=MIT \
 		-res=tmp/
 	cp -v ../snowflake-$(GOOS).su3 .
-	unzip -o snowflake-$(GOOS).zip -d snowflake-zip
+	unzip -o snowflake-$(GOOS).zip -d snowflake-$(GOOS)-zip
 
 res:
 	mkdir -pv tmp/www
