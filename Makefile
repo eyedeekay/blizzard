@@ -70,7 +70,7 @@ index:
 	@echo "</head>" >> index.html
 	@echo "<body>" >> index.html
 	markdown README.md | tee -a index.html
-	@echo '<div>Icons made by <a href="" title="itim2101">itim2101</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>' >> README.md
+	@echo '<div>Icons made by <a href="" title="itim2101">itim2101</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>' >> index.html
 	@echo "</body>" >> index.html
 	@echo "</html>" >> index.html
 
