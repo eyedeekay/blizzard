@@ -19,7 +19,7 @@ snowflake-plugin-win: snowflake-win res
 		-autostart=true \
 		-clientname=snowflake.exe \
 		-consolename="Snowflake Donor" \
-		-consoleurl="http://127.0.0.1:7670" \
+		-consoleurl="http://127.0.0.1:7672" \
 		-icondata="icon/icon.png" \
 		-delaystart="1" \
 		-desc="`cat snowdesc)`" \
@@ -43,7 +43,7 @@ snowflake-plugin: snowflake-lin res
 		-autostart=true \
 		-clientname=snowflake \
 		-consolename="Snowflake Donor" \
-		-consoleurl="http://127.0.0.1:7670" \
+		-consoleurl="http://127.0.0.1:7672" \
 		-icondata="icon/icon.png" \
 		-delaystart="1" \
 		-desc="`cat snowdesc)`" \
