@@ -37,8 +37,11 @@ Interested in helping more?
  - Embed the snowflake badge on your own site:
 
 ``` html
-<iframe src="https://snowflake.torproject.org/embed.html" width="320" height="240" frameborder="0" scrolling="no"></iframe>
+        <iframe src="https://snowflake.torproject.org/embed.html" width="320" height="240" frameborder="0" scrolling="no"></iframe>
 ```
+
+<iframe src="https://snowflake.torproject.org/embed.html" width="320" height="240" frameborder="0" scrolling="no"></iframe>
+
 
 Get it:
 -------
