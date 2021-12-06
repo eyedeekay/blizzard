@@ -27,7 +27,7 @@ snowflake-plugin: snowflake res
 		-delaystart="1" \
 		-desc="`cat snowdesc)`" \
 		-exename=snowflake-$(GOOS) \
-		-command="snowflake -directory \$$PLUGIN/www -log \$$PLUGIN/lib/snowflake.log" \
+		-command="snowflake-$(GOOS) -directory \$$PLUGIN/www -log \$$PLUGIN/lib/snowflake.log" \
 		-license=MIT \
 		-res=tmp/
 	cp -v ../snowflake-$(GOOS).su3 .
