@@ -40,17 +40,15 @@ Interested in helping more?
 
 <iframe src="https://snowflake.torproject.org/embed.html" width="320" height="240" frameborder="0" scrolling="no"></iframe>
 
-
 Get it:
 -------
-
-### Outside I2P
-
- - [Windows](https://github.com/eyedeekay/blizzard/releases)
- - [Linux](https://github.com/eyedeekay/blizzard/releases)
 
 ### Inside I2P
  
  - [Windows (In-I2P)](https://idk.i2p/blizzard/snowflake-windows.su3)
  - [Linux (In-I2P)](https://idk.i2p/blizzard/snowflake-linux.su3)
- 
+
+### Outside I2P
+
+ - [Windows](https://github.com/eyedeekay/blizzard/releases)
+ - [Linux](https://github.com/eyedeekay/blizzard/releases)

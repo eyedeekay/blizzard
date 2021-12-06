@@ -26,7 +26,7 @@ func main() {
 	keepLocalAddresses := flag.Bool("keep-local-addresses", false, "keep local LAN address ICE candidates")
 	relayURL := flag.String("relay", sf.DefaultRelayURL, "websocket relay URL")
 	directory := flag.String("directory", "", "directory with a page to serve locally for your snowflake. If empty, no local page is served.")
-	port := flag.String("port", "7672", "port to listen on")
+	port := flag.String("port", "7672", "port to serve info page(directory) on")
 
 	flag.Parse()
 
