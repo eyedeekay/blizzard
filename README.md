@@ -29,6 +29,12 @@ situation where operating a Snowflake would be unsafe. **So *If* you're able**
 
 So **TL:DR** just to be prosocial.
 
+Interested in helping more?
+
+ - [Get the Snowflake Firefox extension](https://addons.mozilla.org/en-US/firefox/addon/torproject-snowflake/)
+ - [Get the Snowflake Chrome extension](https://chrome.google.com/webstore/detail/snowflake/mafpmfcccpbjnhfhjnllmmalhifmlcie)
+ - [Use the Snowflake Go library to add a proxy to your application](https://pkg.go.dev/git.torproject.org/pluggable-transports/snowflake.git/v2@v2.0.1/proxy/lib)
+
 Get it:
 -------
 
@@ -41,5 +47,13 @@ Get it:
  
  - [Windows (In-I2P)](https://idk.i2p/blizzard/snowflake-windows.su3)
  - [Linux (In-I2P)](https://idk.i2p/blizzard/snowflake-linux.su3)<div>Icons made by <a href="" title="itim2101">itim2101</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+<div>Icons made by <a href="" title="itim2101">itim2101</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+<div>Icons made by <a href="" title="itim2101">itim2101</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+<div>Icons made by <a href="" title="itim2101">itim2101</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+<div>Icons made by <a href="" title="itim2101">itim2101</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+<div>Icons made by <a href="" title="itim2101">itim2101</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+<div>Icons made by <a href="" title="itim2101">itim2101</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+<div>Icons made by <a href="" title="itim2101">itim2101</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+<div>Icons made by <a href="" title="itim2101">itim2101</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
 <div>Icons made by <a href="" title="itim2101">itim2101</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
 <div>Icons made by <a href="" title="itim2101">itim2101</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>

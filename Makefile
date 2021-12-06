@@ -1,6 +1,6 @@
 
 REPO_NAME=blizzard
-VERSION=0.0.032
+VERSION=0.0.035
 
 plugins: clean index snowflake-plugin-win snowflake-plugin
 
@@ -11,7 +11,7 @@ clean:
 snowflake-win:
 	GOOS=windows go build -o snowflake.exe
 
-snowflake-plugin-win: snowflake-win
+snowflake-plugin-win: snowflake-win res
 	i2p.plugin.native -name=snowflake \
 		-signer=hankhill19580@gmail.com \
 		-version "$(VERSION)" \
@@ -19,13 +19,15 @@ snowflake-plugin-win: snowflake-win
 		-autostart=true \
 		-clientname=snowflake.exe \
 		-consolename="Snowflake Donor" \
-		-consoleicon="icon/icon.png" \
+		-consoleurl="http://127.0.0.1:7670" \
+		-icondata="icon/icon.png" \
 		-delaystart="1" \
 		-desc="`cat snowdesc)`" \
 		-exename=snowflake.exe \
-		-command="snowflake.exe -log \$$PLUGIN/lib/snowflake.log" \
+		-command="snowflake.exe -directory \$$PLUGIN/www -log \$$PLUGIN/lib/snowflake.log" \
 		-license=MIT \
-		-targetos="windows"
+		-targetos="windows" \
+		-res=tmp/
 	cp -v snowflake.su3 ../snowflake-windows.su3
 	cp -v ../snowflake-windows.su3 .
 	unzip -o snowflake.zip -d snowflake-zip-win
@@ -33,7 +35,7 @@ snowflake-plugin-win: snowflake-win
 snowflake-lin:
 	GOOS=linux go build -o snowflake
 
-snowflake-plugin: snowflake-lin
+snowflake-plugin: snowflake-lin res
 	i2p.plugin.native -name=snowflake \
 		-signer=hankhill19580@gmail.com \
 		-version "$(VERSION)" \
@@ -41,15 +43,23 @@ snowflake-plugin: snowflake-lin
 		-autostart=true \
 		-clientname=snowflake \
 		-consolename="Snowflake Donor" \
-		-consoleicon="icon/icon.png" \
+		-consoleurl="http://127.0.0.1:7670" \
+		-icondata="icon/icon.png" \
 		-delaystart="1" \
 		-desc="`cat snowdesc)`" \
 		-exename=snowflake \
-		-command="snowflake -log \$$PLUGIN/lib/snowflake.log" \
-		-license=MIT
+		-command="snowflake -directory \$$PLUGIN/www -log \$$PLUGIN/lib/snowflake.log" \
+		-license=MIT \
+		-res=tmp/
 	cp -v snowflake.su3 ../snowflake-linux.su3
 	cp -v ../snowflake-linux.su3 .
 	unzip -o snowflake.zip -d snowflake-zip
+
+res:
+	mkdir -pv tmp/www
+	mkdir -pv tmp/lib
+	cp -v index.html home.css tmp/www/
+	cp "$(HOME)/Workspace/GIT_WORK/i2p.i2p/build/shellservice.jar" tmp/lib/shellservice.jar
 
 index:
 	@echo "<!DOCTYPE html>" > index.html
