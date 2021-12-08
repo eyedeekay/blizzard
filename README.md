@@ -1,33 +1,31 @@
-Snowflake Donor I2P Plugin, `"The Blizzard"`
-============================================
+Blizzard: The I2P Snowflake donor Plugin
+========================================
 
-This is standalone version of the Tor Project's "Snowflake" proxy, which I use to
-produce an I2P Plugin which donates a Snowflake to Tor Browser Users. The
-Snowflake uses I2P to manage it's life-cycle, when you start and stop I2P, so
-goes the Snowflake.
+This is standalone version of the Tor Project's "Snowflake" proxy, which can be used to produce an I2P Plugin that will donate a Snowflake to Tor Browser Users. The Snowflake uses I2P to manage it's life-cycle. That means when you start and stop your I2P router, you start and stop the snowflake.
 
-Why?
-----
+Blizzard is Privacy Mutual Aid
+------------------------------
 
-Well, partly the observation that if you are able to run a participating,
-non-hidden I2P router safely, you are also probably able to run a Snowflake
-proxy. More generally, because I strongly believe that Tor and I2P are on the
-"Same Team" when it comes to improving online privacy and enhancing digital
-autonomy for all. Our networks have different strengths, different use cases,
-and different workflows and where these things differ, sometimes an opportunity
-arises to help another project.
+We are developing a generation of privacy-aware applications motivated by mutual aid, meant to increase the strengths of other applications in the Privacy and Peer-to-Peer ecosystem.
 
-More to the point, I2P is designed to have long runtimes, to be run pretty
-regularly, and most of I2P's routers route at least some "Participating" traffic
-which means traffic they route on behalf of other I2P users, as needed. This is
-a similar pattern to Snowflake. The only situation where I2P routers don't
-attempt to participate in the network is if they are placed in **Hidden Mode**
-because routing I2P packets would be unsafe for them. This is also the sort of
-situation where operating a Snowflake would be unsafe. **So *If* you're able**
-**to safely run an I2P router in non-hidden mode, you're probably able to**
-**safely donate a Snowflake long-term.**
+We learned about instances of attacking Snowflake users by identifying Snowflakes and cutting the users off. This is similar to blocking attempts to I2P where I2P nodes are enumerated and then users are disconnected from those nodes. However, due to I2P's high churn rate, this blocking technique does not appear to have any practical effect on an I2P user's ability to join the network or access information. Blizzard uses I2P's peer diversity and churn to allow access to Tor in blocked areas and still retain Tor's security properties, and in particular their Exit Diversity.
 
-So **TL:DR** just to be prosocial.
+If you can safely use I2P in non-hidden mode, you're probably able to safely donate a Snowflake long-term.
+
+What Does Hidden Mode Mean for the I2P Network?
+-----------------------------------------------
+
+When an I2P router is placed in hidden mode, its connection and interaction with the network change in three main ways:
+
+ 1. It will no longer publish a routerInfo to the NetDB.
+ 2. It will no longer accept participating tunnels.
+ 3. It will reject direct connections to routers in the same country that it is in.
+
+These defences make these routers more difficult to enumerate reliably, and prevent them from potentially being in violation of restrictions on routing traffic for others.
+
+The Invisible Internet Project ( I2P Java) takes information from civil and digital rights organizations in order to make decisions that offer protections for its users. In this case, the ongoing research provided by Freedom House has been referenced. General guidance is to include countries with a Civil Liberties (CL) score of 16 or less or an Internet Freedom score of 39 or less (not free) on a Strict Countries List and automatically be placed into "Hidden" mode.
+
+To see the countries currently included in this list visit: [The I2P Project Website](https://geti2p.net/en/about/restrictive-countries)
 
 Interested in helping more?
 
