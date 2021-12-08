@@ -27,19 +27,8 @@ The Invisible Internet Project ( I2P Java) takes information from civil and digi
 
 To see the countries currently included in this list visit: [The I2P Project Website](https://geti2p.net/en/about/restrictive-countries)
 
-Interested in helping more?
-
- - [Get the Snowflake Firefox extension](https://addons.mozilla.org/en-US/firefox/addon/torproject-snowflake/)
- - [Get the Snowflake Chrome extension](https://chrome.google.com/webstore/detail/snowflake/mafpmfcccpbjnhfhjnllmmalhifmlcie)
- - [Use the Snowflake Go library to add a proxy to your application](https://pkg.go.dev/git.torproject.org/pluggable-transports/snowflake.git/v2@v2.0.1/proxy/lib)
- - Embed the snowflake badge on your own site:
-
-`<iframe src="https://snowflake.torproject.org/embed.html" width="320" height="240" frameborder="0" scrolling="no"></iframe>`
-
-<iframe src="https://snowflake.torproject.org/embed.html" width="320" height="240" frameborder="0" scrolling="no"></iframe>
-
-Get it:
--------
+Create A Blizzard:
+------------------
 
 ### Inside I2P
  
@@ -50,3 +39,17 @@ Get it:
 
  - [Windows](https://github.com/eyedeekay/blizzard/releases)
  - [Linux](https://github.com/eyedeekay/blizzard/releases)
+
+#### Interested in helping more?
+
+ - [Get the Snowflake Firefox extension](https://addons.mozilla.org/en-US/firefox/addon/torproject-snowflake/)
+ - [Get the Snowflake Chrome extension](https://chrome.google.com/webstore/detail/snowflake/mafpmfcccpbjnhfhjnllmmalhifmlcie)
+ - [Use the Snowflake Go library to add a proxy to your application](https://pkg.go.dev/git.torproject.org/pluggable-transports/snowflake.git/v2@v2.0.1/proxy/lib)
+ - Embed the snowflake badge on your own site:
+
+`<iframe src="https://snowflake.torproject.org/embed.html" width="320" height="240" frameborder="0" scrolling="no"></iframe>`
+
+[![Create a Blizzard](blizzard.png)](https://eyedeekay.github.io/blizzard)
+
+<iframe src="https://snowflake.torproject.org/embed.html" width="320" height="240" frameborder="0" scrolling="no"></iframe>
+
