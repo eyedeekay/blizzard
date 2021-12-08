@@ -65,3 +65,11 @@ img {
 iframe {
   margin-left: 40%;
 }
+
+code {
+  font-family: monospace;
+  border-radius: 5%;
+  padding: 1%;
+  border-color: darkgray;
+  border-style: dotted;
+}
