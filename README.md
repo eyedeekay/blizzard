@@ -3,37 +3,32 @@ Blizzard: The I2P Snowflake donor Plugin
 
 [![Create a Blizzard](blizzard.png)](https://eyedeekay.github.io/blizzard)
 
-This is standalone version of the Tor Project's "Snowflake" proxy, which can be used to produce an I2P Plugin that will donate a Snowflake to Tor Browser Users. The Snowflake uses I2P to manage it's life-cycle. That means when you start and stop your I2P router, you start and stop the snowflake.
+We believe that finding ways to strengthen resistence to censorship and maintain access to digital privacy and freedom starts with working on the strengths of the technical abilities of Tor Project and the Invisible Internet (I2P). 
 
-Blizzard is Privacy Mutual Aid
-------------------------------
-
-We are developing a generation of privacy-aware applications motivated by mutual aid, meant to increase the strengths of other applications in the Privacy and Peer-to-Peer ecosystem.
+What is Blizzard and how does it help Tor?
+------------------------------------------
 
 We learned about instances of attacking Snowflake users by identifying Snowflakes and cutting the users off. This is similar to blocking attempts to I2P where I2P nodes are enumerated and then users are disconnected from those nodes. However, due to I2P's high churn rate, this blocking technique does not appear to have any practical effect on an I2P user's ability to join the network or access information. Blizzard uses I2P's peer diversity and churn to allow access to Tor in blocked areas.
 
-If you can safely use I2P in non-hidden mode, you're probably able to safely donate a Snowflake long-term.
+Blizzard is a standalone version of the Tor Project’s Snowflake proxy. It can be used to produce an I2P Plugin that will donate a Snowflake to Tor Browser users. The Snowflake uses I2P to manage its lifecycle. That means when you start and stop your I2P router you start and stop the Snowflake.
 
-What Does Hidden Mode Mean for the I2P Network?
------------------------------------------------
+**If you can safely use I2P in non-hidden mode, you're probably able to safely donate a Snowflake long-term.**
 
-When an I2P router is placed in hidden mode, its connection and interaction with the network change in three main ways:
+How Can I Donate a Snowflake?
+-----------------------------
 
- 1. It will no longer publish a routerInfo to the NetDB.
- 2. It will no longer accept participating tunnels.
- 3. It will reject direct connections to routers in the same country that it is in.
+If you can safely use I2P in non- hidden mode, you will have the ability to donate a Snowflake long-term. Instructions are available for Windows and Linux at this time.
 
-These defences make these routers more difficult to enumerate reliably, and prevent them from potentially being in violation of restrictions on routing traffic for others.
+How do I know if I am in Hidden Mode? What does that mean?
+----------------------------------------------------------
 
-The Invisible Internet Project ( I2P Java) takes information from civil and digital rights organizations in order to make decisions that offer protections for its users. In this case, the ongoing research provided by Freedom House has been referenced. General guidance is to include countries with a Civil Liberties (CL) score of 16 or less or an Internet Freedom score of 39 or less (not free) on a Strict Countries List and automatically be placed into "Hidden" mode.
-
-To see the countries currently included in this list visit: [The I2P Project Website](https://geti2p.net/en/about/restrictive-countries)
+Hidden Mode changes your router’s interaction with the I2P network so that it offers protections for people in areas where participating fully in the network may be a violation of local restrictions. These defences make these routers more difficult to enumerate reliably, and prevent them from potentially being in violation of restrictions on routing traffic for others. You can read more about Hidden Mode on the [The I2P Project Website](https://geti2p.net/en/about/restrictive-countries).
 
 Create A Blizzard:
 ------------------
 
 ### Inside I2P
- 
+
  - [Windows (In-I2P)](http://idk.i2p/blizzard/snowflake-windows.su3)
  - [Linux (In-I2P)](http://idk.i2p/blizzard/snowflake-linux.su3)
 
