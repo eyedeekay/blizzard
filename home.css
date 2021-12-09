@@ -8,44 +8,33 @@ body {
 }
 h1 {
 	width: 55%;
-	margin-left: 45%;
 }
 h2 {
 	width: 55%;
-	margin-left: 45%;
 }
 h3 {
 	width: 55%;
-	margin-left: 45%;
 }
 h4 {
 	width: 55%;
-	margin-left: 45%;
 }
 ul {
 	width: 55%;
 	display: block;
-	margin-left: 40%;
 }
 ol {
 	width: 55%;
 	display: block;
-	margin-left: 40%;
 }
 li {
 	margin-top: 1%;
-	margin-left: 20%;
 }
 p {
 	max-width: 55%;
-  margin-left: 35%;
 }
-#homepage > p:nth-child(2){
-	margin-left: 45%;
-}
-
 img {
-	position: absolute;
+    float: left;
+    width: 35%;
 	top: 5%;
 	left: 5%;
 	width: 25%;
@@ -64,17 +53,13 @@ img {
 	color:red;
 }
 
-iframe {
-  margin-left: 40%;
-}
-
 code {
   font-family: monospace;
   border-radius: 5%;
   padding: 1%;
   border-color: darkgray;
   border-style: dotted;
-  font-size: 1.0em;
+  font-size: .9em;
 }
 
 a {

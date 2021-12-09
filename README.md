@@ -1,6 +1,8 @@
 Blizzard: The I2P Snowflake donor Plugin
 ========================================
 
+[![Create a Blizzard](blizzard.png)](https://eyedeekay.github.io/blizzard)
+
 This is standalone version of the Tor Project's "Snowflake" proxy, which can be used to produce an I2P Plugin that will donate a Snowflake to Tor Browser Users. The Snowflake uses I2P to manage it's life-cycle. That means when you start and stop your I2P router, you start and stop the snowflake.
 
 Blizzard is Privacy Mutual Aid
@@ -48,8 +50,6 @@ Create A Blizzard:
  - Embed the snowflake badge on your own site by copy-and-pasting the following iframe:
 
 `<iframe src="https://snowflake.torproject.org/embed.html" width="320" height="240" frameborder="0" scrolling="no"></iframe>`
-
-[![Create a Blizzard](blizzard.png)](https://eyedeekay.github.io/blizzard)
 
 <iframe src="https://snowflake.torproject.org/embed.html" width="320" height="240" frameborder="0" scrolling="no"></iframe>
 
