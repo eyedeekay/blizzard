@@ -30,7 +30,10 @@ li {
 	margin-top: 1%;
 }
 p {
-	max-width: 55%;
+	max-width: 90%;
+	margin-top: 1%;
+	margin-left: 3%;
+	margin-right: 3%;
 }
 img {
     float: left;
