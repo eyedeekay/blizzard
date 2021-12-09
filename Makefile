@@ -4,7 +4,7 @@ USER_GH=eyedeekay
 VERSION=0.0.035
 
 plugins: clean index
-	GOOS=windows GOARCH=amd64 make snowflake-plugin
+	GOOS=windows GOARCH=amd64 CGO_ENABLED=1 CC=x86_64-w64-mingw32-gcc CXX=x86_64-w64-mingw32-g++ GOOS=windows GOARCH=amd64 make snowflake-plugin
 	GOOS=linux GOARCH=amd64 make snowflake-plugin
 	#GOOS=darwin GOARCH=amd64 make snowflake-plugin
 

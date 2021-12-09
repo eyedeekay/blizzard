@@ -4,6 +4,7 @@ body {
 	text-align: justify;
 	background-color: #373636;
 	color:whitesmoke;
+	font-size: 1.15em;
 }
 h1 {
 	width: 55%;
@@ -73,4 +74,13 @@ code {
   padding: 1%;
   border-color: darkgray;
   border-style: dotted;
+}
+
+a {
+    color: #C6D9FE;
+    padding: 1%;
+}
+
+ul li {
+    color: #C6D9FE;
 }
