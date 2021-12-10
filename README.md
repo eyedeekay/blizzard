@@ -3,7 +3,7 @@ Blizzard: The I2P Snowflake donor Plugin
 
 [![Create a Blizzard](blizzard.png)](https://eyedeekay.github.io/blizzard)
 
-We believe that finding ways to strengthen resistence to censorship and maintain access to digital privacy and freedom starts with working on the strengths of the technical abilities of Tor Project and the Invisible Internet (I2P). 
+We believe that finding ways to strengthen resistence to censorship and maintain access to digital privacy and freedom starts with working on the strengths of the technical abilities of Tor Project and the Invisible Internet Project(I2P). 
 
 What is Blizzard and how does it help Tor?
 ------------------------------------------
