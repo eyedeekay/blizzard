@@ -5,8 +5,8 @@ VERSION=0.0.036
 PWD=`pwd`
 
 plugins: clean index
-	GOOS=windows GOARCH=amd64 CGO_ENABLED=1 CC=x86_64-w64-mingw32-gcc CXX=x86_64-w64-mingw32-g++ GOOS=windows GOARCH=amd64 make snowflake-plugin
-	GOOS=linux GOARCH=amd64 make snowflake-plugin
+	GOOS=windows GOARCH=amd64 CGO_ENABLED=1 CC=x86_64-w64-mingw32-gcc CXX=x86_64-w64-mingw32-g++ GOOS=windows GOARCH=amd64 make docker snowflake-plugin
+	GOOS=linux GOARCH=amd64 make snowflake snowflake-plugin
 	#GOOS=darwin GOARCH=amd64 make snowflake-plugin
 
 clean:
@@ -23,7 +23,7 @@ docker:
 	docker build -t $(USER_GH)/$(REPO_NAME):$(VERSION) .
 	docker run -it -v $(PWD):/home/user/go/src/i2pgit.org/idk/$(REPO_NAME) $(USER_GH)/$(REPO_NAME):$(VERSION)
 
-snowflake-plugin: snowflake res
+snowflake-plugin: res
 	i2p.plugin.native -name=snowflake-$(GOOS) \
 		-signer=hankhill19580@gmail.com \
 		-version "$(VERSION)" \
