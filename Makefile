@@ -1,7 +1,7 @@
 GO111MODULE=on
 REPO_NAME=blizzard
 USER_GH=eyedeekay
-VERSION=0.0.036
+VERSION=0.0.037
 PWD=`pwd`
 
 plugins: clean index
@@ -57,7 +57,6 @@ index:
 	@echo "</head>" >> index.html
 	@echo "<body>" >> index.html
 	markdown README.md | tee -a index.html
-	@echo '<div>Icons made by <a href="" title="itim2101">itim2101</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>' >> index.html
 	@echo "</body>" >> index.html
 	@echo "</html>" >> index.html
 
