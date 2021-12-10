@@ -1,12 +1,12 @@
 GO111MODULE=on
 REPO_NAME=blizzard
 USER_GH=eyedeekay
-VERSION=0.0.037
+VERSION=0.0.37
 PWD=`pwd`
 
 plugins: clean index
-	GOOS=windows GOARCH=amd64 CGO_ENABLED=1 CC=x86_64-w64-mingw32-gcc CXX=x86_64-w64-mingw32-g++ GOOS=windows GOARCH=amd64 make docker snowflake-plugin
-	GOOS=linux GOARCH=amd64 make snowflake snowflake-plugin
+	GOOS=windows GOARCH=amd64 CGO_ENABLED=1 CC=x86_64-w64-mingw32-gcc CXX=x86_64-w64-mingw32-g++ GOOS=windows GOARCH=amd64 make snowflake snowflake-plugin
+	GOOS=linux GOARCH=amd64 make docker snowflake-plugin
 	#GOOS=darwin GOARCH=amd64 make snowflake-plugin
 
 clean:
@@ -26,7 +26,7 @@ docker:
 snowflake-plugin: res
 	i2p.plugin.native -name=snowflake-$(GOOS) \
 		-signer=hankhill19580@gmail.com \
-		-version "$(VERSION)" \
+		-version="$(VERSION)" \
 		-author=hankhill19580@gmail.com \
 		-autostart=true \
 		-clientname=snowflake-$(GOOS) \
@@ -34,13 +34,12 @@ snowflake-plugin: res
 		-consoleurl="http://127.0.0.1:7672" \
 		-icondata="icon/icon.png" \
 		-delaystart="1" \
-		-desc="`cat snowdesc)`" \
+		-desc="`cat snowdesc`" \
 		-exename=snowflake-$(GOOS) \
 		-updateurl=http://idk.i2p/blizzard/snowflake-$(GOOS).su3 \
 		-command="snowflake-$(GOOS) -directory \$$PLUGIN/www -log \$$PLUGIN/lib/snowflake.log" \
 		-license=MIT \
 		-res=tmp/
-	cp -v ../snowflake-$(GOOS).su3 .
 	unzip -o snowflake-$(GOOS).zip -d snowflake-$(GOOS)-zip
 
 res:
@@ -61,13 +60,13 @@ index:
 	@echo "</body>" >> index.html
 	@echo "</html>" >> index.html
 
-export sumsflinux=`sha256sum "../snowflake-linux.su3"`
-export sumsfwindows=`sha256sum "../snowflake-windows.su3"`
+export sumsflinux=`sha256sum "./snowflake-linux.su3"`
+export sumsfwindows=`sha256sum "./snowflake-windows.su3"`
 
 release: version upload-plugins
 
 version:
-	cat README.md | gothub release -s $(GITHUB_TOKEN) -u $(USER_GH) -r $(REPO_NAME) -t v$(VERSION) -d -
+	cat README.md | gothub release -s $(GITHUB_TOKEN) -u $(USER_GH) -r $(REPO_NAME) -t v$(VERSION) -d -; true
 
 download-su3s:
 	GOOS=windows GOARCH=amd64 make download-single-su3
@@ -79,5 +78,5 @@ download-single-su3:
 upload-su3s: upload-plugins
 
 upload-plugins:
-	gothub upload -R -u $(USER_GH) -r "$(REPO_NAME)" -t v$(VERSION) -l "$(sumsflinux)" -n "snowflake-linux.su3" -f "../snowflake-linux.su3"
-	gothub upload -R -u $(USER_GH) -r "$(REPO_NAME)" -t v$(VERSION) -l "$(sumsfwindows)" -n "snowflake-windows.su3" -f "../snowflake-windows.su3"
+	gothub upload -R -u $(USER_GH) -r "$(REPO_NAME)" -t v$(VERSION) -l "$(sumsflinux)" -n "snowflake-linux.su3" -f "./snowflake-linux.su3"
+	gothub upload -R -u $(USER_GH) -r "$(REPO_NAME)" -t v$(VERSION) -l "$(sumsfwindows)" -n "snowflake-windows.su3" -f "./snowflake-windows.su3"
