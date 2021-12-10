@@ -27,6 +27,8 @@ Hidden Mode changes your router’s interaction with the I2P network so that it 
 Create A Blizzard:
 ------------------
 
+[A guide to installing I2P plugins can be found on the I2P web site.](https://geti2p.net/en/docs/plugins)
+
 ### Inside I2P
 
  - [Windows (In-I2P)](http://idk.i2p/blizzard/snowflake-windows.su3)
