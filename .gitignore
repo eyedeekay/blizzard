@@ -13,4 +13,5 @@ snowflake-zip-win/
 *.zip
 managed-plugins-exit.png
 managed-plugins.png
-snowflake-*
+snowflake-*tmp
+vendor

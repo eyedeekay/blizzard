@@ -1,0 +1,23 @@
+.idea
+.git
+.gitlab-ci.yml
+.vscode
+
+# CI cache folder storing docker images
+ci-exports
+
+/i2p-tools
+/cert.pem
+/key.pem
+/_netdb
+i2pseeds.su3
+*.pem
+onion.key
+tmp/
+i2p-tools-*
+*.crl
+*.crt
+*.pem
+plugin
+reseed-tools*
+data-dir*
