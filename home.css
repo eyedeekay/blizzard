@@ -30,19 +30,15 @@ img {
 	width: 22%;
 	display: inline;
 }
-
 .inline {
 	display: inline;
 }
-
 .link-button:focus {
 	outline: none;
 }
-
 .link-button:active {
 	color:red;
 }
-
 code {
   font-family: monospace;
   border-radius: 5%;
@@ -51,17 +47,15 @@ code {
   border-style: dotted;
   font-size: .9em;
 }
-
 a {
     color: #C6D9FE;
     padding: 1%;
 }
-
 ul li {
     color: #C6D9FE;
 }
-
 iframe {
     background: aliceblue;
     border-radius: 15%;
+	margin: 2%;
 }
