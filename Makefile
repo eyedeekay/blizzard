@@ -36,6 +36,7 @@ snowflake-plugin: res
 		-delaystart="1" \
 		-desc="`cat snowdesc`" \
 		-exename=snowflake-$(GOOS) \
+		-website="http://idk.i2p/blizzard/" \
 		-updateurl=http://idk.i2p/blizzard/snowflake-$(GOOS).su3 \
 		-command="snowflake-$(GOOS) -directory \$$PLUGIN/www -log \$$PLUGIN/lib/snowflake.log" \
 		-license=MIT \
