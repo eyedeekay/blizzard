@@ -4,8 +4,10 @@ USER_GH=eyedeekay
 VERSION=0.0.37
 PWD=`pwd`
 
+ARG=-v -tags netgo,osusergo -ldflags '-w -s -extldflags "-static"'
+
 plugins: clean index
-	GOOS=windows GOARCH=amd64 CGO_ENABLED=1 CC=x86_64-w64-mingw32-gcc CXX=x86_64-w64-mingw32-g++ GOOS=windows GOARCH=amd64 make snowflake snowflake-plugin
+	GOOS=windows GOARCH=amd64 CGO_ENABLED=1 CC=x86_64-w64-mingw32-gcc CXX=x86_64-w64-mingw32-g++ make windows snowflake-plugin
 	GOOS=linux GOARCH=amd64 make docker snowflake-plugin
 	#GOOS=darwin GOARCH=amd64 make snowflake-plugin
 
@@ -14,10 +16,14 @@ clean:
 	find . -name '*.go' -exec gofmt -w -s {} \;
 
 snowflake:
-	go build -ldflags "-s -w" -o snowflake-$(GOOS)
+	go build $(ARG) -o snowflake-$(GOOS)
 
 rb:
-	/usr/lib/go-1.15/bin/go build -ldflags "-s -w" -o snowflake-$(GOOS)
+	/usr/lib/go-1.15/bin/go build $(ARG) -o snowflake-$(GOOS)
+
+windows:
+	xgo --targets=windows/amd64 . && mv blizzard-windows-4.0-amd64.exe snowflake-windows.exe
+	cp snowflake-windows.exe snowflake-windows
 
 docker:
 	docker build -t $(USER_GH)/$(REPO_NAME):$(VERSION) .
