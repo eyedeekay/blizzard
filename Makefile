@@ -4,7 +4,8 @@ USER_GH=eyedeekay
 VERSION=0.0.38
 PWD=`pwd`
 
-ARG=-v -tags netgo,osusergo -ldflags '-w -s -extldflags "-static"'
+ARG=-v -tags netgo,osusergo -ldflags '-w -s'
+#ARG=-v -tags netgo,osusergo -ldflags '-w -s -extldflags "-static"'
 
 plugins: clean index
 	GOOS=windows GOARCH=amd64 CGO_ENABLED=1 CC=x86_64-w64-mingw32-gcc CXX=x86_64-w64-mingw32-g++ make windows snowflake-plugin
@@ -12,7 +13,7 @@ plugins: clean index
 	#GOOS=darwin GOARCH=amd64 make snowflake-plugin
 
 clean:
-	rm -frv proxy proxy.exe snowflake snowflake.exe $(REPO_NAME) $(REPO_NAME).exe plugin snowflake-zip snowflake-zip-win *.su3 *.zip
+	rm -frv proxy proxy.exe snowflake snowflake.exe snowflake-windows snowflake-windows.exe $(REPO_NAME) $(REPO_NAME).exe plugin snowflake-zip snowflake-zip-win *.su3 *.zip
 	find . -name '*.go' -exec gofmt -w -s {} \;
 
 snowflake:
