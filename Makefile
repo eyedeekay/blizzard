@@ -1,7 +1,7 @@
 GO111MODULE=on
 REPO_NAME=blizzard
 USER_GH=eyedeekay
-VERSION=0.0.38
+VERSION=0.0.39
 PWD=`pwd`
 
 ARG=-v -tags netgo,osusergo -ldflags '-w -s'
@@ -30,6 +30,10 @@ docker:
 	docker build -t $(USER_GH)/$(REPO_NAME):$(VERSION) .
 	docker run -it -v $(PWD):/home/user/go/src/i2pgit.org/idk/$(REPO_NAME) $(USER_GH)/$(REPO_NAME):$(VERSION)
 
+alpine:
+	docker build -f Dockerfile.alpine -t $(USER_GH)/$(REPO_NAME):$(VERSION) .
+	docker run -it -v $(PWD):/home/user/go/src/i2pgit.org/idk/$(REPO_NAME) $(USER_GH)/$(REPO_NAME):$(VERSION)
+
 snowflake-plugin: res
 	i2p.plugin.native -name=snowflake-$(GOOS) \
 		-signer=hankhill19580@gmail.com \
@@ -38,7 +42,7 @@ snowflake-plugin: res
 		-autostart=true \
 		-clientname=snowflake-$(GOOS) \
 		-consolename="Snowflake Donor" \
-		-consoleurl="http://127.0.0.1:7672" \
+		-consoleurl="http://127.0.0.1:7676" \
 		-icondata="icon/icon.png" \
 		-delaystart="1" \
 		-desc="`cat snowdesc`" \
