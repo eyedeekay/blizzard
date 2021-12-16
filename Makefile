@@ -1,7 +1,7 @@
 GO111MODULE=on
 REPO_NAME=blizzard
 USER_GH=eyedeekay
-VERSION=0.0.40
+VERSION=0.0.41
 PWD=`pwd`
 
 ARG=-v -tags netgo,osusergo -ldflags '-w -s'
