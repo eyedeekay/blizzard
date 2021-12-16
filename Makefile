@@ -57,6 +57,7 @@ snowflake-plugin: res
 res:
 	mkdir -pv tmp/www
 	mkdir -pv tmp/lib
+	cp LICENSE.md tmp/LICENSE
 	cp -v index.html home.css tmp/www/
 	cp "$(HOME)/Workspace/GIT_WORK/i2p.i2p/build/shellservice.jar" tmp/lib/shellservice.jar
 
