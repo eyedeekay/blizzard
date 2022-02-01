@@ -7,9 +7,17 @@ PWD=`pwd`
 ARG=-v -tags netgo,osusergo -ldflags '-w -s'
 #ARG=-v -tags netgo,osusergo -ldflags '-w -s -extldflags "-static"'
 
+all: plugins winplugin linplugin
+
 plugins: clean index
+
+winplugin: plugins
 	GOOS=windows GOARCH=amd64 CGO_ENABLED=1 CC=x86_64-w64-mingw32-gcc CXX=x86_64-w64-mingw32-g++ make windows snowflake-plugin
+
+linplugin: plugins
 	GOOS=linux GOARCH=amd64 make docker snowflake-plugin
+
+#
 	#GOOS=darwin GOARCH=amd64 make snowflake-plugin
 
 clean:
