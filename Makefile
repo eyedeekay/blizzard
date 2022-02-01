@@ -84,7 +84,7 @@ index:
 export sumsflinux=`sha256sum "./snowflake-linux.su3"`
 export sumsfwindows=`sha256sum "./snowflake-windows.su3"`
 
-release: plugins version upload-plugins
+release: all version upload-plugins
 
 version:
 	cat README.md | gothub release -s $(GITHUB_TOKEN) -u $(USER_GH) -r $(REPO_NAME) -t v$(VERSION) -d -; true
