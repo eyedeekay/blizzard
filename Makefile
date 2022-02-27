@@ -15,7 +15,7 @@ winplugin: plugins
 	GOOS=windows GOARCH=amd64 CGO_ENABLED=1 CC=x86_64-w64-mingw32-gcc CXX=x86_64-w64-mingw32-g++ make windows snowflake-plugin
 
 linplugin: plugins
-	GOOS=linux GOARCH=amd64 make docker snowflake-plugin
+	GOOS=linux GOARCH=amd64 make snowflake snowflake-plugin
 
 #
 	#GOOS=darwin GOARCH=amd64 make snowflake-plugin
@@ -32,7 +32,7 @@ rb:
 
 windows:
 	xgo --targets=windows/amd64 . && cp i2pgit.org/idk/blizzard-windows-4.0-amd64.exe snowflake-windows.exe
-	#cp snowflake-windows.exe snowflake-windows
+	cp snowflake-windows.exe snowflake-windows
 
 docker:
 	docker build -t $(USER_GH)/$(REPO_NAME):$(VERSION) .
@@ -101,3 +101,5 @@ upload-su3s: upload-plugins
 upload-plugins:
 	gothub upload -R -u $(USER_GH) -r "$(REPO_NAME)" -t v$(VERSION) -l "$(sumsflinux)" -n "snowflake-linux.su3" -f "./snowflake-linux.su3"
 	gothub upload -R -u $(USER_GH) -r "$(REPO_NAME)" -t v$(VERSION) -l "$(sumsfwindows)" -n "snowflake-windows.su3" -f "./snowflake-windows.su3"
+	gothub upload -R -u $(USER_GH) -r "$(REPO_NAME)" -t v$(VERSION) -l "$(sumsfwindowsbin)" -n "snowflake-windows.exe" -f "./snowflake-windows.exe"
+	gothub upload -R -u $(USER_GH) -r "$(REPO_NAME)" -t v$(VERSION) -l "$(sumsflinuxbin)" -n "snowflake-linux" -f "./snowflake-windows"
