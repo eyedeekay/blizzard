@@ -1,7 +1,7 @@
 GO111MODULE=on
 REPO_NAME=blizzard
 USER_GH=eyedeekay
-VERSION=0.0.41
+VERSION=0.0.42
 PWD=`pwd`
 
 ARG=-v -tags netgo,osusergo -ldflags '-w -s'
@@ -31,8 +31,8 @@ rb:
 	/usr/lib/go-1.15/bin/go build $(ARG) -o snowflake-$(GOOS)
 
 windows:
-	xgo --targets=windows/amd64 . && mv blizzard-windows-4.0-amd64.exe snowflake-windows.exe
-	cp snowflake-windows.exe snowflake-windows
+	xgo --targets=windows/amd64 . && mv i2pgit.org/idk/blizzard-windows-4.0-amd64.exe snowflake-windows.exe
+	#cp snowflake-windows.exe snowflake-windows
 
 docker:
 	docker build -t $(USER_GH)/$(REPO_NAME):$(VERSION) .
