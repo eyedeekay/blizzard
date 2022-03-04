@@ -1,6 +1,6 @@
 module i2pgit.org/idk/blizzard
 
-go 1.15
+go 1.16
 
 require (
 	git.torproject.org/pluggable-transports/snowflake.git v1.1.1-0.20211028140501-0a2598a1e854

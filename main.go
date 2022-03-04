@@ -1,6 +1,7 @@
 package main
 
 import (
+	"embed"
 	"flag"
 	"io"
 	"log"
@@ -15,6 +16,11 @@ import (
 	sf "git.torproject.org/pluggable-transports/snowflake.git/proxy/lib"
 )
 
+//go:embed home.css
+//go:embed index.html
+//go:embed blizzard.png
+var content embed.FS
+
 var proxy sf.SnowflakeProxy
 
 func main() {
@@ -25,7 +31,7 @@ func main() {
 	unsafeLogging := flag.Bool("unsafe-logging", false, "prevent logs from being scrubbed")
 	keepLocalAddresses := flag.Bool("keep-local-addresses", false, "keep local LAN address ICE candidates")
 	relayURL := flag.String("relay", sf.DefaultRelayURL, "websocket relay URL")
-	directory := flag.String("directory", "", "directory with a page to serve locally for your snowflake. If empty, no local page is served.")
+	directory := flag.String("directory", "", "directory with a page to serve locally for your snowflake. If empty a default page is served.")
 	port := flag.String("port", "7676", "port to serve info page(directory) on")
 
 	flag.Parse()
@@ -58,7 +64,11 @@ func main() {
 	go systray.Run(onReady, onExit)
 
 	go func() {
-		http.Handle("/", http.FileServer(http.Dir(*directory)))
+		if *directory != "" {
+			http.Handle("/", http.FileServer(http.Dir(*directory)))
+		} else {
+			http.Handle("/", http.FileServer(http.FS(content)))
+		}
 
 		log.Printf("Serving %s on HTTP localhost:port: %s\n", *directory, *port)
 		log.Fatal(http.ListenAndServe("localhost:"+*port, nil))

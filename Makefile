@@ -83,6 +83,8 @@ index:
 
 export sumsflinux=`sha256sum "./snowflake-linux.su3"`
 export sumsfwindows=`sha256sum "./snowflake-windows.su3"`
+export sumsflinuxbin=`sha256sum "./snowflake-linux"`
+export sumsfwindowsbin=`sha256sum "./snowflake-windows.exe"`
 
 release: all version upload-plugins
 
