@@ -67,7 +67,7 @@ res:
 	mkdir -pv tmp/lib
 	cp LICENSE.md tmp/LICENSE
 	cp -v index.html home.css tmp/www/
-	cp "$(HOME)/build/shellservice.jar" tmp/lib/shellservice.jar
+#	cp "$(HOME)/build/shellservice.jar" tmp/lib/shellservice.jar
 
 index:
 	@echo "<!DOCTYPE html>" > index.html
