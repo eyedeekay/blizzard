@@ -96,7 +96,7 @@ download-su3s:
 	GOOS=linux GOARCH=amd64 make download-single-su3
 
 download-single-su3:
-	wget -N -c "https://github.com/$(USER_GH)/$(REPO_NAME)/releases/download/v$(VERSION)/snowflake-$(GOOS).su3"
+	wget-ds "https://github.com/$(USER_GH)/$(REPO_NAME)/releases/download/v$(VERSION)/snowflake-$(GOOS).su3"
 
 upload-su3s: upload-plugins
 
