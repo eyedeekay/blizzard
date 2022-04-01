@@ -17,8 +17,7 @@ winplugin: plugins
 linplugin: plugins
 	GOOS=linux GOARCH=amd64 make snowflake snowflake-plugin
 
-#
-	#GOOS=darwin GOARCH=amd64 make snowflake-plugin
+#	#GOOS=darwin GOARCH=amd64 make snowflake-plugin
 
 clean:
 	rm -frv proxy proxy.exe snowflake snowflake.exe snowflake-windows snowflake-windows.exe $(REPO_NAME) $(REPO_NAME).exe plugin snowflake-zip snowflake-zip-win *.su3 *.zip
