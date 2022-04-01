@@ -41,9 +41,12 @@ alpine:
 	docker build -f Dockerfile.alpine -t $(USER_GH)/$(REPO_NAME):$(VERSION) .
 	docker run -it -v $(PWD):/home/user/go/src/i2pgit.org/idk/$(REPO_NAME) $(USER_GH)/$(REPO_NAME):$(VERSION)
 
+SIGNER_DIR=$(HOME)/i2p-go-keys/
+
 snowflake-plugin: res
 	i2p.plugin.native -name=snowflake-$(GOOS) \
 		-signer=hankhill19580@gmail.com \
+		-signer-dir=$(SIGNER_DIR) \
 		-version="$(VERSION)" \
 		-author=hankhill19580@gmail.com \
 		-autostart=true \
