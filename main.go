@@ -8,7 +8,7 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/getlantern/systray"
+	"fyne.io/systray"
 
 	"i2pgit.org/idk/blizzard/icon"
 
