@@ -1,7 +1,7 @@
 GO111MODULE=on
 REPO_NAME=blizzard
 USER_GH=eyedeekay
-VERSION=0.0.45
+VERSION=0.0.46
 PWD=`pwd`
 
 ARG=-v -tags netgo,osusergo -ldflags '-w -s'
@@ -12,7 +12,7 @@ all: plugins winplugin linplugin
 plugins: clean index
 
 winplugin: plugins
-	GOOS=windows GOARCH=amd64 CGO_ENABLED=1 CC=x86_64-w64-mingw32-gcc CXX=x86_64-w64-mingw32-g++ make windows snowflake-plugin
+	GOOS=windows GOARCH=amd64 CGO_ENABLED=0 CC=x86_64-w64-mingw32-gcc CXX=x86_64-w64-mingw32-g++ make windows snowflake-plugin
 
 linplugin: plugins
 	GOOS=linux GOARCH=amd64 make snowflake snowflake-plugin
