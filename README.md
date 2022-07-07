@@ -1,4 +1,4 @@
-Blizzard: The I2P Snowflake donor Plugin
+[Blizzard: The I2P Snowflake donor Plugin](/)
 ========================================
 
 [![Create a Blizzard](blizzard.png)](https://eyedeekay.github.io/blizzard)
