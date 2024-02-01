@@ -94,11 +94,6 @@ version:
 	cat README.md | gothub release -s $(GITHUB_TOKEN) -u $(USER_GH) -r $(REPO_NAME) -t v$(VERSION) -d -; true
 
 download-su3s:
-	GOOS=windows GOARCH=amd64 make download-single-su3
-	GOOS=linux GOARCH=amd64 make download-single-su3
-
-download-single-su3:
-	wget-ds "https://github.com/$(USER_GH)/$(REPO_NAME)/releases/download/v$(VERSION)/snowflake-$(GOOS).su3"
 
 upload-su3s: upload-plugins
 
