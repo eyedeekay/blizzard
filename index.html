@@ -1,61 +1,206 @@
-<!DOCTYPE html>
 <html>
-<head>
-  <title>blizzard, I2P Plugin for Donating a Snowflake</title>
-  <link rel="stylesheet" type="text/css" href ="home.css" />
-</head>
-<body>
-<h1><a href="/">Blizzard: The I2P Snowflake donor Plugin</a></h1>
+  <head>
+    <title></title>
+    <meta name="author" content="eyedeekay" />
+    <meta name="description" content="blizzard" />
+    <meta name="keywords" content="trunk" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="showhider.css" />
+    <link rel="stylesheet" type="text/css" href="darklight.css" />
+  </head>
+  <body>
+    <input type="checkbox" id="checkboxDarkLight">
+    <div class="container">
+      <div id="navbar">
+        <a href="#shownav">
+          Show navigation
+        </a>
+        <div id="shownav">
+          <div id="hidenav">
+            <ul>
+              <li>
+                <a href="..">
+                  Up one level ^
+                </a>
+              </li>
+              <li>
+                <a href="index.html">
+                  index
+                </a>
+              </li>
+              <li>
+                <a href="LICENSE.html">
+                  LICENSE
+                </a>
+              </li>
+              <li>
+                <a href="index.html">
+                  index.html
+                </a>
+              </li>
+            </ul>
+            <br>
+            <a href="#hidenav">
+              Hide Navigation
+            </a>
+          </div>
+        </div>
+      </div>
+      <a id="returnhome" href="/">
+        /
+      </a>
+      <h1>
+        <a href="/">
+          Blizzard: The I2P Snowflake donor Plugin
+        </a>
+      </h1>
+      <p>
+        <a href="https://eyedeekay.github.io/blizzard">
+          <img src="blizzard.png" alt="Create a Blizzard" />
+        </a>
+      </p>
+      <p>
+        We believe that finding ways to strengthen resistence to censorship and maintain access to digital privacy and freedom starts with working on the strengths of the technical abilities of Tor Project and the Invisible Internet Project(I2P).
+      </p>
+      <h2>
+        What is Blizzard and how does it help Tor?
+      </h2>
+      <p>
+        We learned about instances of attacking Snowflake users by identifying Snowflakes and cutting the users off. This is similar to blocking attempts to I2P where I2P nodes are enumerated and then users are disconnected from those nodes. However, possibly due to I2P&rsquo;s high relay diversity and churn rate, this blocking technique does not appear to have any practical effect on an I2P user&rsquo;s ability to join the network or access information. Blizzard uses I2P&rsquo;s peer diversity and churn to allow access to Tor in blocked areas.
+      </p>
+      <p>
+        Blizzard is a standalone version of the Tor Project’s Snowflake proxy. It can be used to produce an I2P Plugin that will donate a Snowflake to Tor Browser users. The Snowflake uses I2P to manage its lifecycle. That means when you start and stop your I2P router you start and stop the Snowflake.
+      </p>
+      <p>
+        <strong>
+          If you can safely use I2P in non-hidden mode, you&rsquo;re probably able to safely donate a Snowflake long-term.
+        </strong>
+      </p>
+      <h2>
+        How Can I Donate a Snowflake?
+      </h2>
+      <p>
+        If you can safely use I2P in non- hidden mode, you will have the ability to donate a Snowflake long-term. Instructions are available for Windows and Linux at this time.
+      </p>
+      <h2>
+        How do I know if I am in Hidden Mode? What does that mean?
+      </h2>
+      <p>
+        Hidden Mode changes your router’s interaction with the I2P network so that it offers protections for people in areas where participating fully in the network may be a violation of local restrictions. These defences make these routers more difficult to enumerate reliably, and prevent them from potentially being in violation of restrictions on routing traffic for others. You can read more about Hidden Mode on the
+        <a href="https://geti2p.net/en/about/restrictive-countries">
+          The I2P Project Website
+        </a>
+        .
+      </p>
+      <h2>
+        Create A Blizzard:
+      </h2>
+      <p>
+        <a href="https://geti2p.net/en/docs/plugins">
+          A guide to installing I2P plugins can be found on the I2P web site.
+        </a>
+      </p>
+      <h3>
+        Inside I2P
+      </h3>
+      <ul>
+        <li>
+          <a href="http://idk.i2p/blizzard/snowflake-windows.su3">
+            Windows (In-I2P)
+          </a>
+        </li>
+        <li>
+          <a href="http://idk.i2p/blizzard/snowflake-linux.su3">
+            Linux (In-I2P)
+          </a>
+        </li>
+      </ul>
+      <h3>
+        Outside I2P
+      </h3>
+      <ul>
+        <li>
+          <a href="https://github.com/eyedeekay/blizzard/releases">
+            Windows
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/eyedeekay/blizzard/releases">
+            Linux
+          </a>
+        </li>
+      </ul>
+      <h4>
+        Interested in helping more?
+      </h4>
+      <ul>
+        <li>
+          <a href="https://addons.mozilla.org/en-US/firefox/addon/torproject-snowflake/">
+            Get the Snowflake Firefox extension
+          </a>
+        </li>
+        <li>
+          <a href="https://chrome.google.com/webstore/detail/snowflake/mafpmfcccpbjnhfhjnllmmalhifmlcie">
+            Get the Snowflake Chrome extension
+          </a>
+        </li>
+        <li>
+          <a href="https://pkg.go.dev/git.torproject.org/pluggable-transports/snowflake.git/v2@v2.0.1/proxy/lib">
+            Use the Snowflake Go library to add a proxy to your application
+          </a>
+        </li>
+        <li>
+          Embed the snowflake badge on your own site by copy-and-pasting the following iframe:
+        </li>
+      </ul>
+      <p>
+        <code>
+          &lt;iframe src=&quot;https://snowflake.torproject.org/embed.html&quot; width=&quot;320&quot; height=&quot;240&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot;&gt;&lt;/iframe&gt;
+        </code>
+      </p>
+      <iframe src="https://snowflake.torproject.org/embed.html" width="320" height="240" frameborder="0" scrolling="no"></iframe>
+      <div id="sourcecode">
+        <span id="sourcehead">
+          <strong>
+            Get the source code:
+          </strong>
+        </span>
+        <ul>
+          <li>
+            <a href="https://github.com/eyedeekay/blizzard.git">
+              Source Repository: (https://github.com/eyedeekay/blizzard.git)
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <a href="#show">
+          Show license
+        </a>
+        <div id="show">
+          <div id="hide">
+            <pre><code>Copyright 2021 The Invisible Internet Project
 
-<p><a href="https://eyedeekay.github.io/blizzard"><img src="blizzard.png" alt="Create a Blizzard" title="" /></a></p>
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
-<p>We believe that finding ways to strengthen resistence to censorship and maintain access to digital privacy and freedom starts with working on the strengths of the technical abilities of Tor Project and the Invisible Internet Project(I2P). </p>
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
-<h2>What is Blizzard and how does it help Tor?</h2>
-
-<p>We learned about instances of attacking Snowflake users by identifying Snowflakes and cutting the users off. This is similar to blocking attempts to I2P where I2P nodes are enumerated and then users are disconnected from those nodes. However, possibly due to I2P's high relay diversity and churn rate, this blocking technique does not appear to have any practical effect on an I2P user's ability to join the network or access information. Blizzard uses I2P's peer diversity and churn to allow access to Tor in blocked areas.</p>
-
-<p>Blizzard is a standalone version of the Tor Project’s Snowflake proxy. It can be used to produce an I2P Plugin that will donate a Snowflake to Tor Browser users. The Snowflake uses I2P to manage its lifecycle. That means when you start and stop your I2P router you start and stop the Snowflake.</p>
-
-<p><strong>If you can safely use I2P in non-hidden mode, you're probably able to safely donate a Snowflake long-term.</strong></p>
-
-<h2>How Can I Donate a Snowflake?</h2>
-
-<p>If you can safely use I2P in non- hidden mode, you will have the ability to donate a Snowflake long-term. Instructions are available for Windows and Linux at this time.</p>
-
-<h2>How do I know if I am in Hidden Mode? What does that mean?</h2>
-
-<p>Hidden Mode changes your router’s interaction with the I2P network so that it offers protections for people in areas where participating fully in the network may be a violation of local restrictions. These defences make these routers more difficult to enumerate reliably, and prevent them from potentially being in violation of restrictions on routing traffic for others. You can read more about Hidden Mode on the <a href="https://geti2p.net/en/about/restrictive-countries">The I2P Project Website</a>.</p>
-
-<h2>Create A Blizzard:</h2>
-
-<p><a href="https://geti2p.net/en/docs/plugins">A guide to installing I2P plugins can be found on the I2P web site.</a></p>
-
-<h3>Inside I2P</h3>
-
-<ul>
-<li><a href="http://idk.i2p/blizzard/snowflake-windows.su3">Windows (In-I2P)</a></li>
-<li><a href="http://idk.i2p/blizzard/snowflake-linux.su3">Linux (In-I2P)</a></li>
-</ul>
-
-<h3>Outside I2P</h3>
-
-<ul>
-<li><a href="https://github.com/eyedeekay/blizzard/releases">Windows</a></li>
-<li><a href="https://github.com/eyedeekay/blizzard/releases">Linux</a></li>
-</ul>
-
-<h4>Interested in helping more?</h4>
-
-<ul>
-<li><a href="https://addons.mozilla.org/en-US/firefox/addon/torproject-snowflake/">Get the Snowflake Firefox extension</a></li>
-<li><a href="https://chrome.google.com/webstore/detail/snowflake/mafpmfcccpbjnhfhjnllmmalhifmlcie">Get the Snowflake Chrome extension</a></li>
-<li><a href="https://pkg.go.dev/git.torproject.org/pluggable-transports/snowflake.git/v2@v2.0.1/proxy/lib">Use the Snowflake Go library to add a proxy to your application</a></li>
-<li>Embed the snowflake badge on your own site by copy-and-pasting the following iframe:</li>
-</ul>
-
-<p><code>&lt;iframe src="https://snowflake.torproject.org/embed.html" width="320" height="240" frameborder="0" scrolling="no"&gt;&lt;/iframe&gt;</code></p>
-
-<iframe src="https://snowflake.torproject.org/embed.html" width="320" height="240" frameborder="0" scrolling="no"></iframe>
-</body>
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</code></pre>
+            <a href="#hide">
+              Hide license
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <iframe src="https://snowflake.torproject.org/embed.html" width="320" height="240" frameborder="0" scrolling="no"></iframe>
+    </div>
+    <div>
+      <a href="https://geti2p.net/">
+        <img class="i2plogo" src="i2plogo.png"></img>
+        I2P
+      </a>
+    </div>
+  </body>
 </html>
