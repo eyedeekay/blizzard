@@ -3,9 +3,10 @@ REPO_NAME=blizzard
 USER_GH=eyedeekay
 VERSION=0.1.0
 PWD=`pwd`
+GO=`which go`
 
-ARG=-v -tags netgo,osusergo -ldflags '-w -s'
-#ARG=-v -tags netgo,osusergo -ldflags '-w -s -extldflags "-static"'
+#ARG=-v -tags netgo,osusergo -ldflags '-w -s'
+ARG=-v -tags netgo,osusergo -ldflags '-w -s -extldflags "-static"'
 
 all: plugins winplugin linplugin
 
@@ -24,7 +25,7 @@ clean:
 	find . -name '*.go' -exec gofmt -w -s {} \;
 
 snowflake:
-	go build $(ARG) -o snowflake-$(GOOS)
+	$(GO) build $(ARG) -o snowflake-$(GOOS)
 
 rb:
 	/usr/lib/go-1.15/bin/go build $(ARG) -o snowflake-$(GOOS)
