@@ -11,6 +11,7 @@ ARG=-v -tags netgo,osusergo -ldflags '-w -s -extldflags "-static"'
 all: plugins winplugin linplugin
 
 plugins: index
+	rm congig.yaml plugin.yaml -f
 
 winplugin: plugins
 	GOOS=windows GOARCH=amd64 CGO_ENABLED=0 CC=x86_64-w64-mingw32-gcc CXX=x86_64-w64-mingw32-g++ make windows snowflake-plugin
