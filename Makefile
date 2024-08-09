@@ -27,12 +27,8 @@ clean:
 snowflake:
 	$(GO) build $(ARG) -o snowflake-$(GOOS)
 
-rb:
-	/usr/lib/go-1.15/bin/go build $(ARG) -o snowflake-$(GOOS)
-
 windows:
-	xgo --targets=windows/amd64 . && cp i2pgit.org/idk/blizzard-windows-4.0-amd64.exe snowflake-windows.exe
-	cp snowflake-windows.exe snowflake-windows
+	GOOS=windows make snowflake
 
 docker:
 	docker build -t $(USER_GH)/$(REPO_NAME):$(VERSION) .
