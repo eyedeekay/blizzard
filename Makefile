@@ -10,15 +10,13 @@ ARG=-v -tags netgo,osusergo -ldflags '-w -s -extldflags "-static"'
 
 all: plugins winplugin linplugin
 
-plugins: clean index
+plugins: index
 
 winplugin: plugins
 	GOOS=windows GOARCH=amd64 CGO_ENABLED=0 CC=x86_64-w64-mingw32-gcc CXX=x86_64-w64-mingw32-g++ make windows snowflake-plugin
 
 linplugin: plugins
-	GOOS=linux GOARCH=amd64 make snowflake snowflake-plugin
-
-#	#GOOS=darwin GOARCH=amd64 make snowflake-plugin
+	GOOS=linux GOARCH=amd64 make linux snowflake-plugin
 
 clean:
 	rm -frv proxy proxy.exe snowflake snowflake.exe snowflake-windows snowflake-windows.exe $(REPO_NAME) $(REPO_NAME).exe plugin snowflake-zip snowflake-zip-win *.su3 *.zip
@@ -29,6 +27,9 @@ snowflake:
 
 windows:
 	GOOS=windows make snowflake
+
+linux:
+	GOOS=linux make snowflake
 
 docker:
 	docker build -t $(USER_GH)/$(REPO_NAME):$(VERSION) .
