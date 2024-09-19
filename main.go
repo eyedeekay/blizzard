@@ -12,8 +12,11 @@ import (
 
 	"i2pgit.org/idk/blizzard/icon"
 
-	"git.torproject.org/pluggable-transports/snowflake.git/common/safelog"
-	sf "git.torproject.org/pluggable-transports/snowflake.git/proxy/lib"
+	//sf "gitlab.torproject.org/pluggable-transports/snowflake.git/proxy/lib"
+	//"gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/ptutil/safelog"
+
+	"gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/ptutil/safelog"
+	sf "gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/snowflake/v2/proxy/lib"
 )
 
 //go:embed home.css
@@ -42,6 +45,7 @@ func main() {
 		BrokerURL:          *rawBrokerURL,
 		KeepLocalAddresses: *keepLocalAddresses,
 		RelayURL:           *relayURL,
+		ProxyType: "blizzard",
 	}
 
 	var logOutput io.Writer = os.Stderr
