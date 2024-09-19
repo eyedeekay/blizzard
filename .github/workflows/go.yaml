@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        go-version: [ '1.19', '1.20', '1.21.x' ]
+        go-version: [ '1.21.x' ]
 
     steps:
       - uses: actions/checkout@v4
@@ -19,3 +19,5 @@ jobs:
       # You can test your matrix by printing the current Go version
       - name: Display Go version
         run: go version
+      - name: Build executables
+        run: go build -o snowflake-linux
