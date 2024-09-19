@@ -21,6 +21,22 @@ jobs:
         run: go version
       - name: Build executables
         run: go build -o snowflake-linux
+      - name: Upload 
+        uses: actions/upload-artifact@v4
+        with:
+          path: snowflake-linux
+          name: snowflake-linux
+      - name: Upload artifacts
+        uses: ncipollo/release-action@v1
+        with:
+          artifacts: snowflake-linux
+          prerelease: true
+          allowUpdates: true
+          replacesArtifacts: true
+          makeLatest: true
+          tag: nightly
+          bodyFile: "README.md"
+
 
   buildmac:
 
@@ -39,7 +55,23 @@ jobs:
       - name: Display Go version
         run: go version
       - name: Build executables
-        run: go build -o snowflake-linux
+        run: go build -o snowflake-macos
+      - name: Upload 
+        uses: actions/upload-artifact@v4
+        with:
+          path: snowflake-macos
+          name: snowflake-macos
+      - name: Upload artifacts
+        uses: ncipollo/release-action@v1
+        with:
+          artifacts: snowflake-macos
+          prerelease: true
+          allowUpdates: true
+          replacesArtifacts: true
+          makeLatest: true
+          tag: nightly
+          bodyFile: "README.md"
+
 
   buildwin:
 
@@ -58,4 +90,19 @@ jobs:
       - name: Display Go version
         run: go version
       - name: Build executables
-        run: go build -o snowflake-linux.exe
+        run: go build -o snowflake-windows.exe
+      - name: Upload 
+        uses: actions/upload-artifact@v4
+        with:
+          path: snowflake-windows.exe
+          name: snowflake-windows.exe
+      - name: Upload artifacts
+        uses: ncipollo/release-action@v1
+        with:
+          artifacts: snowflake-windows.exe
+          prerelease: true
+          allowUpdates: true
+          replacesArtifacts: true
+          makeLatest: true
+          tag: nightly
+          bodyFile: "README.md"
