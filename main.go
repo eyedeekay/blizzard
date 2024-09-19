@@ -12,9 +12,6 @@ import (
 
 	"i2pgit.org/idk/blizzard/icon"
 
-	//sf "gitlab.torproject.org/pluggable-transports/snowflake.git/proxy/lib"
-	//"gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/ptutil/safelog"
-
 	"gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/ptutil/safelog"
 	sf "gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/snowflake/v2/proxy/lib"
 )
@@ -45,7 +42,7 @@ func main() {
 		BrokerURL:          *rawBrokerURL,
 		KeepLocalAddresses: *keepLocalAddresses,
 		RelayURL:           *relayURL,
-		ProxyType: "blizzard",
+		ProxyType:          "blizzard",
 	}
 
 	var logOutput io.Writer = os.Stderr
