@@ -20,4 +20,4 @@ RUN adduser --disabled-password --gecos "" --uid 1000 --gid 1000 --shell /bin/ba
 COPY . /home/user/go/src/i2pgit.org/idk/blizzard
 WORKDIR /home/user/go/src/i2pgit.org/idk/blizzard
 RUN chown -R user:user /home/user
-CMD make snowflake
+CMD make blizzard

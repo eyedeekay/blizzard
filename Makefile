@@ -14,23 +14,23 @@ plugins: index
 	rm congig.yaml plugin.yaml -f
 
 winplugin: plugins
-	GOOS=windows GOARCH=amd64 CGO_ENABLED=0 CC=x86_64-w64-mingw32-gcc CXX=x86_64-w64-mingw32-g++ make windows snowflake-plugin
+	GOOS=windows GOARCH=amd64 CGO_ENABLED=0 CC=x86_64-w64-mingw32-gcc CXX=x86_64-w64-mingw32-g++ make windows blizzard-plugin
 
 linplugin: plugins
-	GOOS=linux GOARCH=amd64 make linux snowflake-plugin
+	GOOS=linux GOARCH=amd64 make linux blizzard-plugin
 
 clean:
-	rm -frv proxy proxy.exe snowflake snowflake.exe snowflake-windows snowflake-windows.exe $(REPO_NAME) $(REPO_NAME).exe plugin snowflake-zip snowflake-zip-win *.su3 *.zip
+	rm -frv proxy proxy.exe blizzard blizzard.exe blizzard-windows blizzard-windows.exe $(REPO_NAME) $(REPO_NAME).exe plugin blizzard-zip blizzard-zip-win *.su3 *.zip
 	find . -name '*.go' -exec gofmt -w -s {} \;
 
-snowflake:
-	$(GO) build $(ARG) -o snowflake-$(GOOS)
+blizzard:
+	$(GO) build $(ARG) -o blizzard-$(GOOS)
 
 windows:
-	GOOS=windows make snowflake
+	GOOS=windows make blizzard
 
 linux:
-	GOOS=linux make snowflake
+	GOOS=linux make blizzard
 
 docker:
 	docker build -t $(USER_GH)/$(REPO_NAME):$(VERSION) .
@@ -42,26 +42,26 @@ alpine:
 
 SIGNER_DIR=$(HOME)/i2p-go-keys/
 
-snowflake-plugin: res
-	i2p.plugin.native -name=snowflake-$(GOOS) \
+blizzard-plugin: res
+	i2p.plugin.native -name=blizzard-$(GOOS) \
 		-signer=hankhill19580@gmail.com \
 		-signer-dir=$(SIGNER_DIR) \
 		-version="$(VERSION)" \
 		-author=hankhill19580@gmail.com \
 		-autostart=true \
-		-clientname=snowflake-$(GOOS) \
+		-clientname=blizzard-$(GOOS) \
 		-consolename="Snowflake Donor" \
 		-consoleurl="http://127.0.0.1:7676" \
 		-icondata="icon/icon.png" \
 		-delaystart="1" \
 		-desc="`cat snowdesc`" \
-		-exename=snowflake-$(GOOS) \
+		-exename=blizzard-$(GOOS) \
 		-website="http://idk.i2p/blizzard/" \
-		-updateurl=http://idk.i2p/blizzard/snowflake-$(GOOS).su3 \
-		-command="snowflake-$(GOOS) -directory \$$PLUGIN/www -log \$$PLUGIN/lib/snowflake.log" \
+		-updateurl=http://idk.i2p/blizzard/blizzard-$(GOOS).su3 \
+		-command="blizzard-$(GOOS) -directory \$$PLUGIN/www -log \$$PLUGIN/lib/blizzard.log" \
 		-license=MIT \
 		-res=tmp/
-	unzip -o snowflake-$(GOOS).zip -d snowflake-$(GOOS)-zip
+	unzip -o blizzard-$(GOOS).zip -d blizzard-$(GOOS)-zip
 
 res:
 	mkdir -pv tmp/www
@@ -82,10 +82,10 @@ index:
 	@echo "</body>" >> index.html
 	@echo "</html>" >> index.html
 
-export sumsflinux=`sha256sum "./snowflake-linux.su3"`
-export sumsfwindows=`sha256sum "./snowflake-windows.su3"`
-export sumsflinuxbin=`sha256sum "./snowflake-linux"`
-export sumsfwindowsbin=`sha256sum "./snowflake-windows.exe"`
+export sumsflinux=`sha256sum "./blizzard-linux.su3"`
+export sumsfwindows=`sha256sum "./blizzard-windows.su3"`
+export sumsflinuxbin=`sha256sum "./blizzard-linux"`
+export sumsfwindowsbin=`sha256sum "./blizzard-windows.exe"`
 
 release: all version upload-plugins
 
@@ -98,7 +98,7 @@ download-su3s:
 upload-su3s: upload-plugins
 
 upload-plugins:
-	github-release upload -R -u $(USER_GH) -r "$(REPO_NAME)" -t v$(VERSION) -l "$(sumsflinux)" -n "snowflake-linux.su3" -f "./snowflake-linux.su3"
-	github-release upload -R -u $(USER_GH) -r "$(REPO_NAME)" -t v$(VERSION) -l "$(sumsfwindows)" -n "snowflake-windows.su3" -f "./snowflake-windows.su3"
-	github-release upload -R -u $(USER_GH) -r "$(REPO_NAME)" -t v$(VERSION) -l "$(sumsfwindowsbin)" -n "snowflake-windows.exe" -f "./snowflake-windows.exe"
-	github-release upload -R -u $(USER_GH) -r "$(REPO_NAME)" -t v$(VERSION) -l "$(sumsflinuxbin)" -n "snowflake-linux" -f "./snowflake-linux"
+	github-release upload -R -u $(USER_GH) -r "$(REPO_NAME)" -t v$(VERSION) -l "$(sumsflinux)" -n "blizzard-linux.su3" -f "./blizzard-linux.su3"
+	github-release upload -R -u $(USER_GH) -r "$(REPO_NAME)" -t v$(VERSION) -l "$(sumsfwindows)" -n "blizzard-windows.su3" -f "./blizzard-windows.su3"
+	github-release upload -R -u $(USER_GH) -r "$(REPO_NAME)" -t v$(VERSION) -l "$(sumsfwindowsbin)" -n "blizzard-windows.exe" -f "./blizzard-windows.exe"
+	github-release upload -R -u $(USER_GH) -r "$(REPO_NAME)" -t v$(VERSION) -l "$(sumsflinuxbin)" -n "blizzard-linux" -f "./blizzard-linux"

@@ -15,3 +15,5 @@ managed-plugins-exit.png
 managed-plugins.png
 snowflake-*tmp
 vendor
+plugin.yaml
+client.yaml

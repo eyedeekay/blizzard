@@ -31,7 +31,7 @@ func main() {
 	unsafeLogging := flag.Bool("unsafe-logging", false, "prevent logs from being scrubbed")
 	keepLocalAddresses := flag.Bool("keep-local-addresses", false, "keep local LAN address ICE candidates")
 	relayURL := flag.String("relay", sf.DefaultRelayURL, "websocket relay URL")
-	directory := flag.String("directory", "", "directory with a page to serve locally for your snowflake. If empty a default page is served.")
+	directory := flag.String("directory", "", "directory with a page to serve locally for your Snowflake. If empty a default page is served.")
 	port := flag.String("port", "7676", "port to serve info page(directory) on")
 
 	flag.Parse()
@@ -85,7 +85,7 @@ func onReady() {
 	systray.SetIcon(icon.Data)
 	systray.SetTitle("Snowflake Donor")
 	systray.SetTooltip("You are available to donate a Snowflake proxy")
-	mQuit := systray.AddMenuItem("Stop Snowflake", "Close the application and stop your snowflake.")
+	mQuit := systray.AddMenuItem("Stop Snowflake", "Close the application and stop your Snowflake.")
 
 	// Sets the icon of a menu item. Only available on Mac and Windows.
 	mQuit.SetIcon(icon.Data)
