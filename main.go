@@ -7,6 +7,7 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"runtime"
 
 	"fyne.io/systray"
 
@@ -21,6 +22,7 @@ import (
 //go:embed index.html
 //go:embed blizzard.png
 //go:embed icon/icon.png
+//go:embed icon/iconwin.ico
 var content embed.FS
 
 var proxy sf.SnowflakeProxy
@@ -87,10 +89,17 @@ func main() {
 
 func onReady() {
 	log.Println("Launching tray")
-	Data, err := content.ReadFile("icon/icon.png")
+	var Data []byte
+	var err error
+	if runtime.GOOS== "windows" {
+		Data, err = content.ReadFile("icon/icon.png")
+	}else{
+		Data, err = content.ReadFile("icon/iconwin.ico")
+	}
 	if err != nil {
 		log.Fatal(err)
 	}
+	
 	systray.SetIcon(Data)
 	systray.SetTitle("Snowflake Donor")
 	systray.SetTooltip("You are available to donate a Snowflake proxy")
