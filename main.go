@@ -10,7 +10,7 @@ import (
 
 	"fyne.io/systray"
 
-	"i2pgit.org/idk/blizzard/icon"
+	//"i2pgit.org/idk/blizzard/icon"
 
 	"gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/ptutil/safelog"
 	"gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/snowflake/v2/common/event"
@@ -20,6 +20,7 @@ import (
 //go:embed home.css
 //go:embed index.html
 //go:embed blizzard.png
+//go:embed icon/icon.png
 var content embed.FS
 
 var proxy sf.SnowflakeProxy
@@ -85,13 +86,18 @@ func main() {
 }
 
 func onReady() {
-	systray.SetIcon(icon.Data)
+	log.Println("Launching tray")
+	Data, err := content.ReadFile("icon/icon.png")
+	if err != nil {
+		log.Fatal(err)
+	}
+	systray.SetIcon(Data)
 	systray.SetTitle("Snowflake Donor")
 	systray.SetTooltip("You are available to donate a Snowflake proxy")
 	mQuit := systray.AddMenuItem("Stop Snowflake", "Close the application and stop your Snowflake.")
 
 	// Sets the icon of a menu item. Only available on Mac and Windows.
-	mQuit.SetIcon(icon.Data)
+	mQuit.SetIcon(Data)
 	for {
 		select {
 		case <-mQuit.ClickedCh:

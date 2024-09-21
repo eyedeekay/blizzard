@@ -5,8 +5,8 @@ VERSION=0.1.0
 PWD=`pwd`
 GO=`which go`
 
-#ARG=-v -tags netgo,osusergo -ldflags '-w -s'
-ARG=-v -tags netgo,osusergo -ldflags '-w -s -extldflags "-static"'
+ARG=-v -tags netgo,osusergo #-ldflags '-w -s'
+#ARG=-v -tags netgo,osusergo -ldflags '-w -s -extldflags "-static"'
 
 all: plugins winplugin linplugin
 
@@ -61,7 +61,7 @@ blizzard-plugin: res
 		-command="blizzard-$(GOOS) -directory \$$PLUGIN/www -log \$$PLUGIN/lib/blizzard.log" \
 		-license=MIT \
 		-res=tmp/
-	unzip -o blizzard-$(GOOS).zip -d blizzard-$(GOOS)-zip
+	unzip -o blizzard.zip -d blizzard-$(GOOS)-zip
 
 res:
 	mkdir -pv tmp/www
