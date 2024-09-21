@@ -17,3 +17,6 @@ snowflake-*tmp
 vendor
 plugin.yaml
 client.yaml
+data-dir*
+snowflake-*
+blizzard-*
