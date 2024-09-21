@@ -91,7 +91,7 @@ func onReady() {
 	log.Println("Launching tray")
 	var Data []byte
 	var err error
-	if runtime.GOOS== "windows" {
+	if runtime.GOOS != "windows" {
 		Data, err = content.ReadFile("icon/icon.png")
 	}else{
 		Data, err = content.ReadFile("icon/iconwin.ico")
