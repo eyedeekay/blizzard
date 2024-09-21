@@ -1,12 +1,11 @@
 GO111MODULE=on
 REPO_NAME=blizzard
 USER_GH=eyedeekay
-VERSION=0.1.0
+VERSION=0.1.1
 PWD=`pwd`
 GO=`which go`
-
-ARG=-v -tags netgo,osusergo #-ldflags '-w -s'
-#ARG=-v -tags netgo,osusergo -ldflags '-w -s -extldflags "-static"'
+CGO_ENABLED=0
+ARG=-v -tags netgo,osusergo -ldflags '-w -s -extldflags "-static"'
 
 all: plugins winplugin linplugin
 
