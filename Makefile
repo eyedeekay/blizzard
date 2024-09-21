@@ -20,8 +20,8 @@ linplugin: plugins
 	GOOS=linux GOARCH=amd64 make linux blizzard-plugin
 
 clean:
-	rm -frv proxy proxy.exe blizzard blizzard.exe blizzard-windows blizzard-windows.exe $(REPO_NAME) $(REPO_NAME).exe plugin blizzard-zip blizzard-zip-win *.su3 *.zip
-	find . -name '*.go' -exec gofmt -w -s {} \;
+	git clean -fdx
+	find . -name '*.go' -exec gofumpt -w -s {} \;
 
 blizzard:
 	$(GO) build $(ARG) -o blizzard-$(GOOS)
@@ -43,13 +43,13 @@ alpine:
 SIGNER_DIR=$(HOME)/i2p-go-keys/
 
 blizzard-plugin: res
-	i2p.plugin.native -name=blizzard-$(GOOS) \
+	i2p.plugin.native -name=blizzard \
 		-signer=hankhill19580@gmail.com \
 		-signer-dir=$(SIGNER_DIR) \
 		-version="$(VERSION)" \
 		-author=hankhill19580@gmail.com \
 		-autostart=true \
-		-clientname=blizzard-$(GOOS) \
+		-clientname=blizzard \
 		-consolename="Snowflake Donor" \
 		-consoleurl="http://127.0.0.1:7676" \
 		-icondata="icon/icon.png" \

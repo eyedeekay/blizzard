@@ -13,6 +13,7 @@ import (
 	"i2pgit.org/idk/blizzard/icon"
 
 	"gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/ptutil/safelog"
+	"gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/snowflake/v2/common/event"
 	sf "gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/snowflake/v2/proxy/lib"
 )
 
@@ -37,12 +38,14 @@ func main() {
 	flag.Parse()
 
 	proxy = sf.SnowflakeProxy{
-		Capacity:           uint(*capacity),
-		STUNURL:            *stunURL,
-		BrokerURL:          *rawBrokerURL,
-		KeepLocalAddresses: *keepLocalAddresses,
-		RelayURL:           *relayURL,
-		ProxyType:          "blizzard",
+		Capacity:               uint(*capacity),
+		STUNURL:                *stunURL,
+		BrokerURL:              *rawBrokerURL,
+		KeepLocalAddresses:     *keepLocalAddresses,
+		RelayURL:               *relayURL,
+		RelayDomainNamePattern: "$",
+		ProxyType:              "blizzard",
+		EventDispatcher:        event.NewSnowflakeEventDispatcher(),
 	}
 
 	var logOutput io.Writer = os.Stderr
@@ -50,7 +53,7 @@ func main() {
 
 	log.SetFlags(log.LstdFlags | log.LUTC)
 	if *logFilename != "" {
-		f, err := os.OpenFile(*logFilename, os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0600)
+		f, err := os.OpenFile(*logFilename, os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0o600)
 		if err != nil {
 			log.Fatal(err)
 		}
