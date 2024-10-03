@@ -43,10 +43,10 @@ SIGNER_DIR=$(HOME)/i2p-go-keys/
 
 blizzard-plugin: res
 	i2p.plugin.native -name=blizzard \
-		-signer=hankhill19580@gmail.com \
+		-signer=idki2p@mail.i2p \
 		-signer-dir=$(SIGNER_DIR) \
 		-version="$(VERSION)" \
-		-author=hankhill19580@gmail.com \
+		-author=idki2p@mail.i2p \
 		-autostart=true \
 		-clientname=blizzard \
 		-consolename="Snowflake Donor" \
@@ -101,3 +101,9 @@ upload-plugins:
 	github-release upload -R -u $(USER_GH) -r "$(REPO_NAME)" -t v$(VERSION) -l "$(sumsfwindows)" -n "blizzard-windows.su3" -f "./blizzard-windows.su3"
 	github-release upload -R -u $(USER_GH) -r "$(REPO_NAME)" -t v$(VERSION) -l "$(sumsfwindowsbin)" -n "blizzard-windows.exe" -f "./blizzard-windows.exe"
 	github-release upload -R -u $(USER_GH) -r "$(REPO_NAME)" -t v$(VERSION) -l "$(sumsflinuxbin)" -n "blizzard-linux" -f "./blizzard-linux"
+
+
+sign:
+	rm -rf blizzard.zip blizzard.su3
+	cd plugin && zip -r ../blizzard.zip . && cd ..
+	`which i2p` SU3File sign -c PLUGIN -t RSA_SHA512_4096 blizzard.zip blizzard.su3 ${HOME}/.i2p-plugin-keys/news-su3-keystore.ks ${VERSION} idki2p@mail.i2p

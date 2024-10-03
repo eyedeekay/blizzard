@@ -93,13 +93,13 @@ func onReady() {
 	var err error
 	if runtime.GOOS != "windows" {
 		Data, err = content.ReadFile("icon/icon.png")
-	}else{
+	} else {
 		Data, err = content.ReadFile("icon/iconwin.ico")
 	}
 	if err != nil {
 		log.Fatal(err)
 	}
-	
+
 	systray.SetIcon(Data)
 	systray.SetTitle("Snowflake Donor")
 	systray.SetTooltip("You are available to donate a Snowflake proxy")

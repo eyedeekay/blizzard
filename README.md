@@ -31,8 +31,8 @@ Create A Blizzard:
 
 ### Inside I2P
 
- - [Windows (In-I2P)](http://idk.i2p/blizzard/snowflake-windows.su3)
- - [Linux (In-I2P)](http://idk.i2p/blizzard/snowflake-linux.su3)
+ - [Windows (In-I2P)](http://idk.i2p/blizzard/blizzard-windows.su3)
+ - [Linux (In-I2P)](http://idk.i2p/blizzard/blizzard-linux.su3)
 
 ### Outside I2P
 

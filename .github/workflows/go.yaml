@@ -20,16 +20,16 @@ jobs:
       - name: Display Go version
         run: go version
       - name: Build executables
-        run: go build -o snowflake-linux
+        run: go build -o blizzard-linux
       - name: Upload 
         uses: actions/upload-artifact@v4
         with:
-          path: snowflake-linux
-          name: snowflake-linux
+          path: blizzard-linux
+          name: blizzard-linux
       - name: Upload artifacts
         uses: ncipollo/release-action@v1
         with:
-          artifacts: snowflake-linux
+          artifacts: blizzard-linux
           prerelease: true
           allowUpdates: true
           replacesArtifacts: true
@@ -55,16 +55,16 @@ jobs:
       - name: Display Go version
         run: go version
       - name: Build executables
-        run: go build -o snowflake-macos
+        run: go build -o blizzard-macos
       - name: Upload 
         uses: actions/upload-artifact@v4
         with:
-          path: snowflake-macos
-          name: snowflake-macos
+          path: blizzard-macos
+          name: blizzard-macos
       - name: Upload artifacts
         uses: ncipollo/release-action@v1
         with:
-          artifacts: snowflake-macos
+          artifacts: blizzard-macos
           prerelease: true
           allowUpdates: true
           replacesArtifacts: true
@@ -90,16 +90,16 @@ jobs:
       - name: Display Go version
         run: go version
       - name: Build executables
-        run: go build -o snowflake-windows.exe
+        run: go build -o blizzard-windows.exe
       - name: Upload 
         uses: actions/upload-artifact@v4
         with:
-          path: snowflake-windows.exe
-          name: snowflake-windows.exe
+          path: blizzard-windows.exe
+          name: blizzard-windows.exe
       - name: Upload artifacts
         uses: ncipollo/release-action@v1
         with:
-          artifacts: snowflake-windows.exe
+          artifacts: blizzard-windows.exe
           prerelease: true
           allowUpdates: true
           replacesArtifacts: true
