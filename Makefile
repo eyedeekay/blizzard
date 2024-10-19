@@ -1,7 +1,7 @@
 GO111MODULE=on
 REPO_NAME=blizzard
 USER_GH=eyedeekay
-VERSION=0.1.1
+VERSION=0.1.2
 PWD=`pwd`
 GO=`which go`
 CGO_ENABLED=0
