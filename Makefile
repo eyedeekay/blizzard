@@ -60,6 +60,7 @@ blizzard-plugin: res
 		-command="blizzard-$(GOOS) -directory \$$PLUGIN/www -log \$$PLUGIN/lib/blizzard.log" \
 		-license=MIT \
 		-res=tmp/
+	cp blizzard.su3 blizzard-$(GOOS).su3
 	unzip -o blizzard.zip -d blizzard-$(GOOS)-zip
 
 res:
