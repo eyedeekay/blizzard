@@ -85,7 +85,7 @@ index:
 export sumsflinux=`sha256sum "./blizzard-linux.su3"`
 export sumsfwindows=`sha256sum "./blizzard-windows.su3"`
 export sumsflinuxbin=`sha256sum "./blizzard-linux"`
-export sumsfwindowsbin=`sha256sum "./blizzard-windows.exe"`
+export sumsfwindowsbin=`sha256sum "./blizzard-windows"`
 
 release: all version upload-plugins
 
@@ -100,7 +100,7 @@ upload-su3s: upload-plugins
 upload-plugins:
 	github-release upload -R -u $(USER_GH) -r "$(REPO_NAME)" -t v$(VERSION) -l "$(sumsflinux)" -n "blizzard-linux.su3" -f "./blizzard-linux.su3"
 	github-release upload -R -u $(USER_GH) -r "$(REPO_NAME)" -t v$(VERSION) -l "$(sumsfwindows)" -n "blizzard-windows.su3" -f "./blizzard-windows.su3"
-	github-release upload -R -u $(USER_GH) -r "$(REPO_NAME)" -t v$(VERSION) -l "$(sumsfwindowsbin)" -n "blizzard-windows.exe" -f "./blizzard-windows.exe"
+	github-release upload -R -u $(USER_GH) -r "$(REPO_NAME)" -t v$(VERSION) -l "$(sumsfwindowsbin)" -n "blizzard-windows.exe" -f "./blizzard-windows"
 	github-release upload -R -u $(USER_GH) -r "$(REPO_NAME)" -t v$(VERSION) -l "$(sumsflinuxbin)" -n "blizzard-linux" -f "./blizzard-linux"
 
 
