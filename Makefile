@@ -103,7 +103,6 @@ upload-plugins:
 	github-release upload -R -u $(USER_GH) -r "$(REPO_NAME)" -t v$(VERSION) -l "$(sumsfwindowsbin)" -n "blizzard-windows.exe" -f "./blizzard-windows"
 	github-release upload -R -u $(USER_GH) -r "$(REPO_NAME)" -t v$(VERSION) -l "$(sumsflinuxbin)" -n "blizzard-linux" -f "./blizzard-linux"
 
-
 sign:
 	rm -rf blizzard.zip blizzard.su3
 	cd plugin && zip -r ../blizzard.zip . && cd ..
