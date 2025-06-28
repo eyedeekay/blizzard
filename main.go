@@ -25,6 +25,12 @@ import (
 //go:embed icon/iconwin.ico
 var content embed.FS
 
+//go:embed icon/icon.png
+var unixIcon []byte
+
+//go:embed icon/iconwin.ico
+var windowsIcon []byte
+
 var proxy sf.SnowflakeProxy
 
 func main() {
@@ -90,14 +96,10 @@ func main() {
 func onReady() {
 	log.Println("Launching tray")
 	var Data []byte
-	var err error
 	if runtime.GOOS != "windows" {
-		Data, err = content.ReadFile("icon/icon.png")
+		Data = unixIcon
 	} else {
-		Data, err = content.ReadFile("icon/iconwin.ico")
-	}
-	if err != nil {
-		log.Fatal(err)
+		Data = windowsIcon
 	}
 
 	systray.SetIcon(Data)
